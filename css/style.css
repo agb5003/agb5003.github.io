@@ -1,5 +1,10 @@
 /* STYLESHEET FOR INDEX.HTML (LANDING PAGE) */
 
 body {
+    flex: auto;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Roboto Mono'; font-size: 18px;
 }
