@@ -9,7 +9,33 @@ body {
     font-family: 'Roboto Mono'; font-size: 18px;
 }
 
+.author {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
 .homepageTitle {
     font-size: 27px;
     margin-bottom: auto;
+}
+
+.menuContainer {
+    border: none;
+    border-radius: 10px;
+}
+
+.vertical-menu {
+    width: 200px;
+    border: none;
+    border-radius: 10px;
+}
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+.vertical-menu a:hover {
+    background-color: #ccc;
 }
