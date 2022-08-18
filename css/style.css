@@ -20,8 +20,16 @@ body {
 }
 
 .menuContainer {
+    width: 200px;
+    height: fit-content;
     border: none;
+    background-color: #eee;
     border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .vertical-menu {
