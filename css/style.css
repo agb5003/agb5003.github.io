@@ -8,3 +8,8 @@ body {
     align-items: center;
     font-family: 'Roboto Mono'; font-size: 18px;
 }
+
+.homepageTitle {
+    font-size: 27px;
+    margin-bottom: auto;
+}
