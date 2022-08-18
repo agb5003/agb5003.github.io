@@ -26,7 +26,7 @@ body {
 
 .author {
     font-size: 13px;
-    margin-bottom: 20px;
+    margin: 20px;
     color: black
 }
 .author:hover {
@@ -40,8 +40,40 @@ body {
     text-decoration: none;
 }
 .homepageTitle:hover {
-    cursor: default;
+    cursor: pointer;
 }
+.homepageContainer {
+    position: relative;
+
+    flex: auto;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.homepageContainer > .tooltip {
+    font-size: 12px;
+    visibility: hidden;
+    width: 160px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 7px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 3px;
+
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -80px;
+}
+.homepageContainer:hover > .tooltip {
+    visibility: visible;
+}
+
+
 
 .menuAndDirContainer {
     flex: auto;
