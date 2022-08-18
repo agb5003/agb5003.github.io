@@ -95,3 +95,6 @@ body {
     position: fixed;
     bottom: 5px;
 }
+.caption a {
+    color: black;
+}
