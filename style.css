@@ -131,7 +131,8 @@ body {
     font-size: 13px;
     margin-bottom: 20px;
     color: var(--text-color);
-
+    position: absolute;
+    bottom: 10px;
 }
 .directory:hover {
     cursor: default;
