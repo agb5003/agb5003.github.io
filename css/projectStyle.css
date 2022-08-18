@@ -16,7 +16,9 @@ body {
 .subtitle:hover {
     cursor: default;
 }
-
+.subtitle a {
+    color: black;
+}
 .homepageTitle {
     font-size: 27px;
     margin-bottom: auto;
@@ -57,6 +59,8 @@ body {
     text-decoration: none;
 }
 .vertical-menu .backButton {
+    border-top-style: solid;
+    border-width: 1px;
     background-color: #ccc;
 }
 .vertical-menu a:hover {
