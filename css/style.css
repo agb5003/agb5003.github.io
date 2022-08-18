@@ -13,10 +13,16 @@ body {
     font-size: 13px;
     margin-bottom: 20px;
 }
+.author:hover {
+    cursor: default;
+}
 
 .homepageTitle {
     font-size: 27px;
     margin-bottom: auto;
+}
+.homepageTitle:hover {
+    cursor: default;
 }
 
 .menuContainer {
@@ -46,4 +52,12 @@ body {
 }
 .vertical-menu a:hover {
     background-color: #ccc;
+}
+
+.directory {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+.directory:hover {
+    cursor: default;
 }

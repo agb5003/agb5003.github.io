@@ -13,6 +13,9 @@ body {
     font-size: 13px;
     margin-bottom: 20px;
 }
+.subtitle:hover {
+    cursor: default;
+}
 
 .homepageTitle {
     font-size: 27px;
@@ -22,8 +25,13 @@ body {
     text-decoration: none;
     color: black;
 }
+.homepageTitle:hover {
+    cursor: default;
+}
 
 .menuContainer {
+    margin-top:25px ;
+
     width: 200px;
     height: fit-content;
     border: none;
@@ -48,6 +56,9 @@ body {
     padding: 12px;
     text-decoration: none;
 }
-.vertical-menu a:hover {
+.vertical-menu .backButton {
     background-color: #ccc;
+}
+.vertical-menu a:hover {
+    background-color: #a5a5a5;
 }
