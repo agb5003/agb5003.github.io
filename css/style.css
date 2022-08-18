@@ -1,28 +1,59 @@
 /* STYLESHEET FOR INDEX.HTML (LANDING PAGE) */
 
 body {
+    animation: fadeInAnimation ease 0.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
     flex: auto;
     flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Roboto Mono'; font-size: 18px;
+
+    background-color: white
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
 }
 
 .author {
     font-size: 13px;
     margin-bottom: 20px;
+    color: black
 }
 .author:hover {
     cursor: default;
 }
 
-.homepageTitle {
+.homepageTitle, .homepageTitle a {
     font-size: 27px;
     margin-bottom: auto;
+    color: black;
+    text-decoration: none;
 }
 .homepageTitle:hover {
     cursor: default;
+}
+
+.menuAndDirContainer {
+    flex: auto;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .menuContainer {
@@ -50,14 +81,29 @@ body {
     padding: 12px;
     text-decoration: none;
 }
-.vertical-menu a:hover {
+.vertical-menu a:hover, .vertical-menu a:focus  {
     background-color: #ccc;
+    outline: none;
+}
+.vertical-menu > .spotify {
+    color: #2ca356;
+}
+.vertical-menu > .lastfm {
+    color: #a24b4d;
+}
+.vertical-menu > .projects {
+    color: #b8a319;
 }
 
 .directory {
     font-size: 13px;
     margin-bottom: 20px;
+    color: var(--text-color);
+
 }
 .directory:hover {
     cursor: default;
+}
+.directory a {
+    color: black;
 }
