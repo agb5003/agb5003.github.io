@@ -95,6 +95,38 @@ body {
     color: #b8a319;
 }
 
+
+.backButtonContainer {
+    margin-top: 20px;
+    width: 200px;
+    height: fit-content;
+    border: none;
+    background-color: #eee;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.backButtonMenu {
+    width: 200px;
+    border: none;
+    border-radius: 10px;
+}
+.backButtonMenu > .backButton {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+.backButtonMenu > .backButton:hover, .backButtonMenu > backButton:focus  {
+    background-color: #ccc;
+    outline: none;
+}
+
+
 .directory {
     font-size: 13px;
     margin-bottom: 20px;
