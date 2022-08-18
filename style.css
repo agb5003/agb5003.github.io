@@ -59,15 +59,15 @@ body {
 }
 
 .resetButton {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     margin-left: auto;
     margin-right: 20px;
-    font-family: 'Roboto Mono'; font-size: 16px;
-    height: 40px;
+    font-family: 'Roboto Mono'; font-size: 20px;
+    height: 36px;
     width: 80px;
     background-color: #d4d4d4;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
 }
 .resetButton:hover {
@@ -83,7 +83,7 @@ body {
     margin-left: 22px;
     text-indent: 10px;
     height: 30px;
-    width: 75%;
+    width: 78%;
     border-color: black;
     border-style: solid;
     border-radius: 5px;
