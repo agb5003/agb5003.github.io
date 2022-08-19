@@ -1,23 +1,57 @@
 var currentWordIndex;
-var wordsWanted = 50;//total number of words that the user wants to go through
+var wordsWanted;//total number of words that the user wants to go through
 var correctWords;
 var wordArray;
 var wordArrayForHTML;
 var currentWordIsDone;
 var startTime, endTime;
+var currentActive;
 
 const inputBoxElement = document.getElementById('inputBox');
 // Makes prompt when first loaded
+const selector25 = document.getElementById('select25');
+const selector50 = document.getElementById('select50');
+const selector100 = document.getElementById('select100');
+const selector250 = document.getElementById('select250');
 
 let HTMLtext;
 
 window.onload = function() {
+    var wordsWantedDefault = 50;
+    currentActive = 50;
+    wordsWanted = wordsWantedDefault;
+    resetPrompt(wordsWantedDefault);
+    inputBoxElement.focus();
+    changeUnderlines(currentActive);
+}
+
+selector25.onclick = function () {
+    wordsWanted = 25;
+    currentActive = 25;
     resetPrompt();
     inputBoxElement.focus();
+    changeUnderlines(currentActive);
+}
+
+selector50.onclick = function () {
+    wordsWanted = 50;
+    currentActive = 50;
+    resetPrompt();
+    inputBoxElement.focus();
+    changeUnderlines(currentActive);
+}
+
+selector100.onclick = function () {
+    wordsWanted = 100;
+    currentActive = 100;
+    resetPrompt();
+    inputBoxElement.focus();
+    changeUnderlines(currentActive);
 }
 
 document.getElementById("Reset").onclick = function() { // WHEN ELEMENT WITH ID "Reset" IS CLICKED:CHANGES LABEL ABOVE TEXTBOX TO "Welcome, <username>"
-    resetPrompt();
+    resetPrompt(wordsWanted);
+    inputBoxElement.focus();
 }
 
 // Add event listener for escape key
@@ -28,8 +62,8 @@ document.addEventListener('keydown', (event) => {
     }
 }, false);
 
-function resetPrompt() { // WHEN ELEMENT WITH ID "Reset" IS CLICKED:CHANGES LABEL ABOVE TEXTBOX TO "Welcome, <username>"
-    wordArray = newPrompt();
+function resetPrompt(wordsWanted) { // WHEN ELEMENT WITH ID "Reset" IS CLICKED:CHANGES LABEL ABOVE TEXTBOX TO "Welcome, <username>"
+    wordArray = newPrompt(wordsWanted);
     wordArrayForHTML = wrapper(wordArray);
     HTMLtext = wordArrayForHTML.join(" ");
     document.getElementById('paragraph1').innerHTML = HTMLtext;
@@ -45,7 +79,7 @@ function resetPrompt() { // WHEN ELEMENT WITH ID "Reset" IS CLICKED:CHANGES LABE
     document.getElementById('w0').style.color = "orange";
 }
 
-function newPrompt() {
+function newPrompt() { // Makes new prompt array
     /* Why declare function with const? As a best practice since JS ES6, it's best to
     declare as many functions as possible with const, because it means the definition
     of the function cannot be changed. If it's intended for the definition of the
@@ -131,7 +165,7 @@ inputBoxElement.addEventListener('input', (event) => {// CAUTION CURSED CODE INS
 
                             var accuracy = (correctWords / wordsWanted) * 100
                             
-                            document.getElementById('header').innerHTML = correctWords + " correct " + accuracy + "% accuracy " + wpmRounded + " WPM"
+                            document.getElementById('score').innerHTML = correctWords + " correct " + accuracy + "% accuracy " + wpmRounded + " WPM"
                             console.log("done iterating")
                         }
                         break;
@@ -185,3 +219,22 @@ function wrapper(wordArray) {
     return wordsWrapped;
 }
 
+function changeUnderlines(currentActive) {
+    switch (true) {
+        case currentActive == 25:
+            selector25.style.textDecoration = 'underline'
+            selector50.style.textDecoration = 'none'
+            selector100.style.textDecoration = 'none'
+            break;
+        case currentActive == 50:
+            selector50.style.textDecoration = 'underline'
+            selector25.style.textDecoration = 'none'
+            selector100.style.textDecoration = 'none'
+            break;
+        case currentActive == 100:
+            selector100.style.textDecoration = 'underline'
+            selector25.style.textDecoration = 'none'
+            selector50.style.textDecoration = 'none'
+            break;
+    }
+}
