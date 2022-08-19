@@ -1,9 +1,7 @@
 /* STYLESHEET FOR INDEX.HTML (LANDING PAGE) */
 
 body {
-    animation: fadeInAnimation ease 0.3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    
 
     flex: auto;
     flex-direction: column;
@@ -76,6 +74,10 @@ body {
 
 
 .menuAndDirContainer {
+    animation: fadeInAnimation ease 0.25s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
     flex: auto;
     flex-direction: column;
     display: flex;
@@ -117,6 +119,7 @@ body {
     background-color: #ccc;
     outline: none;
 }
+.vertical-menu
 .vertical-menu > .spotify {
     color: #2ca356;
 }
