@@ -16,6 +16,10 @@ const onGenerateSubmit = (e) => {
         urlBox.style.backgroundColor = "#fcc9ce";
         urlBox.placeholder = "URL field cannot be blank."
     } else {
+        if (url.slice(0, 8) != "https://") {
+            urlBox.value = "https://" + url;
+        }
+
         showLoading();
 
         setTimeout(() => {
