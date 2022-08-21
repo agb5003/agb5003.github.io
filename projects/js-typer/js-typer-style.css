@@ -119,6 +119,7 @@ body {
 .caption {
     position: fixed;
     bottom: 5px;
+    font-size: 14px;
 }
 .caption a {
     color: black;

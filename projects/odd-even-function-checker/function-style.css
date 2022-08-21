@@ -1,0 +1,84 @@
+h1 {
+    font-size: 30px;
+    font-family: Roboto Mono;
+}
+
+body {
+    font-family: Roboto Mono;
+    font-size: 26px;
+}
+
+input {
+    background-color: #ccc;
+    border: none;
+    border-radius: 3px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.container {
+    padding: 20px;
+    display: inline
+}
+.containerChild {
+    flex: 1;
+}
+.containerChild {
+    margin: 10px;
+    width: 30px;
+}
+.normal{
+    width: 16px;
+    font-size: 26px;
+
+    background-color: #ccc;
+
+    margin: -10px;
+}
+#inputBoxA {
+    height: fit-content;
+    margin-right: 3px;
+}
+.superM {
+    position: absolute;
+    width: 12px;
+
+}
+
+.super {
+    position: absolute;
+    width: 14px;
+    margin-left: -10px;
+    margin-right: 10px;
+}
+
+.reset {
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: 5px;
+    font-family: 'Roboto Mono'; font-size: 18px;
+    height: 36px;
+    width: 80px;
+    background-color: #d4d4d4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.reset:hover {
+    background-color: #adadad;
+}
+
+.submit {
+    margin-bottom: 20px;
+    margin-left: auto;
+    font-family: 'Roboto Mono'; font-size: 18px;
+    height: 36px;
+    width: 80px;
+    background-color: #d4d4d4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.submit:hover {
+    background-color: #adadad;
+}

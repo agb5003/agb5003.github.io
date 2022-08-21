@@ -103,8 +103,21 @@ body {
     overflow: hidden;
 }
 
+.menuContainerProjects { /* Styles ONLY projects homepage*/
+    width: 250px;
+    height: fit-content;
+    border: none;
+    background-color: #eee;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
 .vertical-menu {
-    width: 200px;
+    width: 300px;
     border: none;
     border-radius: 10px;
 }
@@ -163,9 +176,9 @@ body {
 
 
 .directory {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 20px;
-    color: var(--text-color);
+    color: black;
     position: absolute;
     bottom: 10px;
 }

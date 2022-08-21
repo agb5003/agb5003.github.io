@@ -35,6 +35,11 @@ document.getElementById("submitButton").onclick = function() {
     document.getElementById('paragraph').innerHTML = result;
 }
 
+document.getElementById("resetButton").onclick = function() {
+    //User input
+    clearInputs();
+}
+
 
 function checkIfEven(a, b, m, n, c, xVal) {
     let i = 0;
@@ -96,3 +101,10 @@ function checkIfOdd(a, b, m, n, c, xVal) {
     }
 }
 
+function clearInputs() {// this is insanely inefficient but I haven't figured out class selectors so fuck it
+    document.getElementById('inputBoxA').value = "";
+    document.getElementById('inputBoxB').value = "";
+    document.getElementById('inputBoxC').value = "";
+    document.getElementById('inputBoxM').value = "";
+    document.getElementById('inputBoxN').value = "";
+}

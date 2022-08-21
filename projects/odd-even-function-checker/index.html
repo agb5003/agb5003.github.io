@@ -6,22 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>odd-or-even</title>
     <script defer src="index.js"></script>
+    <link rel="shortcut icon" type="image/png" href="../../icons/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" href="function-style.css">
 </head>
 <body>
-    <p>ax^m + bx^n + c</p>
+    <h1>Function Checker (WIP)</h1>
 
-    <label for="inputBoxA">a:</label><br>
-    <input class="inputBox" id="inputBoxA" type="text"><br>
-    <label for="inputBoxM">m:</label><br>
-    <input class="inputBox" id="inputBoxM" type="text"><br>
-    <label for="inputBoxB">b:</label><br>
-    <input class="inputBox" id="inputBoxB" type="text"><br>
-    <label for="inputBoxN">n:</label><br>
-    <input class="inputBox" id="inputBoxN" type="text"><br>
-    <label for="inputBoxC">c:</label><br>
-    <input class="inputBox" id="inputBoxC" type="text"><br>
-
-    <button id="submitButton">Submit</button>
+    <div class="container">
+        
+        <span class="containerChild">
+            <input class="normal" id="inputBoxA" type="text" placeholder="a">x<input class="superM" id="inputBoxM" type="text" placeholder="m">    
+        </span>
+        +
+        <span class="containerChild">
+            <input class="normal" id="inputBoxB" type="text" placeholder="b">
+            x
+            <input class="super" id="inputBoxN" type="text" placeholder="n">
+        </span>
+        +
+        <span class="containerChild">
+            <input class="normal" id="inputBoxC" type="text" placeholder="c">
+        </span>
+    </div>
+    <button class="reset" id="resetButton">Reset</button>
+    <button class="submit" id="submitButton">Submit</button>
 
     <p id="paragraph">Input your values</p>
 </body>
