@@ -1,0 +1,753 @@
+<!DOCTYPE html><html><head>
+      <title>CAPS_13_C2TB1702</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="report-13">Report 13</h1>
+
+<p>Maximilian Fernaldy - C2TB1702</p>
+<h2 class="mume-header" id="introduction-to-feed-forward-neural-networks">Introduction to Feed-forward Neural Networks</h2>
+
+<p>Continuing on the framework we have built in report 12, this report will spotlight a slightly different field in machine learning: <strong>Neural Networks</strong>. As the name suggests, artificial neural networks mimic the way our brain works in processing new information based on past experiences. We just have virtual <em>nodes</em> (also called <em>units</em>) in place of neurons and links between the nodes in place of axons. It then makes sense why diagrams of artificial neural networks <em>literally</em> look like nets.</p>
+<figure>
+  <p align="center"> <img src="./resources/neuralnetwork.webp" width="400"> </p>
+  <figcaption>Figure 1 - A visualization of a neural network</figcaption>
+</figure>
+<p>A neural network will have three basic components: the <em>input</em> layer, <em>hidden</em> (also called <em>intermediate</em>) layers and the <em>output</em> layer. There are several types of neural networks, but we will focus on feed-forward networks in this instance. Feed-forward networks always process information <strong>in one direction</strong>, that is, from the input towards the output layer. The layers between the input and output contain nodes or units that act somewhat like individual linear regression models. We can express the computation that happens in each layer by this model:</p>
+<figure>
+  <p align="center"> <img src="./resources/uwz.png" width="300"> </p>
+  <figcaption>Figure 2 - A single layer neural network</figcaption>
+</figure>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>u</mi><mi>j</mi></msub><mo>=</mo><mstyle scriptlevel="0" displaystyle="true"><munderover><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>I</mi></munderover><msub><mi>w</mi><mrow><mi>j</mi><mi>i</mi></mrow></msub><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><msub><mi>b</mi><mi>j</mi></msub></mstyle></mrow><annotation encoding="application/x-tex">u_j = \displaystyle\sum_{i = 1}^{I} w_{ji} x_i + b_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3.106em;vertical-align:-1.2777em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8283em;"><span style="top:-1.8723em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">&#x2211;</span></span></span><span style="top:-4.3em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.07847em;">I</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.2777em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">ji</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>z</mi><mi>j</mi></msub><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><msub><mi>u</mi><mi>j</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">z_j = f(u_j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.044em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
+<p>In each node in each layer, the above computation is done. First, the inputs are all taken into one node, weighted by some weight designated for that node, and summed up. This sum is then modified by the <em>bias</em> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">b_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> of the node, which determines the value passed into the <em>activation function</em> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span>. The activation function determines the value passed into the next layer, usually between 0 and 1 or -1 to 1. In a multi-layered network, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">z_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.044em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> then becomes the input for the next layer, until the last layer which is the output layer. In a clustering neural network, this output layer will contain the scores of each class. The class with the highest score would then be picked for the object to be classified into.</p>
+<h3 class="mume-header" id="an-example">An example</h3>
+
+<p>We can better visualize neural networks by going through an example of a single-node neural network. Suppose on one weekend, we are trying to decide whether or not we want to go to the park. To do so, we list off all the deciding factors:</p>
+<ol>
+<li>Is the weather good? (Yes: 1, No: 0)</li>
+<li>Have we walked the dog in the past 3 days? (Yes: 1, No: 0)</li>
+<li>Do they sell ice cream at the park? (Yes: 1, No: 0)</li>
+<li>Do we have time to go to the park next weekend? (Yes: 0, No: 1)</li>
+</ol>
+<p>Because these variables have different degrees of importance to us, we must also assign weights to the answers of these questions.</p>
+<ol>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mn>1</mn></msub><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">w_1 = 5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">5</span></span></span></span>, because we hate bad weather and the dog might get sick if it rains when we&apos;re at the park.</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mn>2</mn></msub><mo>=</mo><mo>&#x2212;</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">w_2 = -3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">&#x2212;</span><span class="mord">3</span></span></span></span>, notice how the weight is <strong>negative</strong>, because having walked the dog in the past 3 days means we have <em>less</em> of a reason to go to the park. Compare this with the effect of the first variable, where it has a <strong>positive</strong> weight, and a &quot;Yes&quot; answer results in <em>more</em> of a reason to go to the park.</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mn>3</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">w_3 = 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span>, the effect of this variable is similar to variable 1, in that a <em>Yes</em> answer results in <em>more</em> of a reason to go, but the effect has less magnitude than variable 1. This may be because ice cream is not as important to us as the weather.</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mn>4</mn></msub><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">w_4 = 4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span>, notice how this time, we flipped the binary assignment: the value 1 is obtained if the answer is &quot;No&quot;. This is just another way of setting up the input variables. If we don&apos;t have time to go to the park next weekend, we should go to the park this weekend, while we have time for it. This is why a &quot;No&quot; answer results in <em>more</em> of a reason to go to the park.</li>
+</ol>
+<p>The answers to the questions determine our inputs <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>. This means we assign these values for <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>:</p>
+<ol>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x_1 = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>, the sun is out, very few clouds in the sky and no rain is predicted for today.</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_2 = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>, the last time we walked our dog was last week.</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>3</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_3 = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>, they only have sandwiches at the park.</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>4</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x_4 = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>, we have exams next week, which means we won&apos;t have time to go out.</li>
+</ol>
+<p>Lastly, we assign the bias <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">b</span></span></span></span> to be <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">-7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">&#x2212;</span><span class="mord">7</span></span></span></span>. This value is hard to describe in real world examples, as it is just a value that modifies the weighted sum of the inputs so that it can be passed into the activation function (which, in this case, decides whether or not we are going to the park). We can think of the bias as the <em>laziness factor</em>. A more negative value means we are less willing to go to the park, regardless of how important it is. A more positive value means we <em>want</em> to go to the park, even if it might not be very important.</p>
+<p>Calculating the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">u</span></span></span></span>, we have</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mi>u</mi></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mstyle scriptlevel="0" displaystyle="true"><munderover><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>I</mi></munderover><msub><mi>w</mi><mi>i</mi></msub><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><mi>b</mi></mstyle></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><munder><munder><mrow><mn>1</mn><mo>&#xD7;</mo><mn>5</mn></mrow><mo stretchy="true">&#x23DF;</mo></munder><mrow><msub><mi>w</mi><mn>1</mn></msub><msub><mi>x</mi><mn>1</mn></msub></mrow></munder><mo>+</mo><munder><munder><mrow><mn>0</mn><mo>&#xD7;</mo><mo stretchy="false">(</mo><mo>&#x2212;</mo><mn>3</mn><mo stretchy="false">)</mo></mrow><mo stretchy="true">&#x23DF;</mo></munder><mrow><msub><mi>w</mi><mn>2</mn></msub><msub><mi>x</mi><mn>2</mn></msub></mrow></munder><mo>+</mo><munder><munder><mrow><mn>0</mn><mo>&#xD7;</mo><mn>2</mn></mrow><mo stretchy="true">&#x23DF;</mo></munder><mrow><msub><mi>w</mi><mn>3</mn></msub><msub><mi>x</mi><mn>3</mn></msub></mrow></munder><mo>+</mo><munder><munder><mrow><mn>1</mn><mo>&#xD7;</mo><mn>4</mn></mrow><mo stretchy="true">&#x23DF;</mo></munder><mrow><msub><mi>w</mi><mn>4</mn></msub><msub><mi>x</mi><mn>4</mn></msub></mrow></munder><mo>+</mo><munder><munder><mrow><mo stretchy="false">(</mo><mo>&#x2212;</mo><mn>7</mn><mo stretchy="false">)</mo></mrow><mo stretchy="true">&#x23DF;</mo></munder><mi>b</mi></munder></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mi>u</mi></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>2</mn></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*} u &amp;= \displaystyle\sum_{i = 1}^{I} w_i x_i + b \\ &amp;= \underbrace{1 \times 5}_{w_1x_1} + \underbrace{0 \times (-3)}_{w_2x_2} + \underbrace{0 \times 2}_{w_3x_3} + \underbrace{1\times4}_{w_4x_4} + \underbrace{(-7)}_{b} \\ u &amp;= 2 \end{align*}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:7.6301em;vertical-align:-3.5651em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:4.0651em;"><span style="top:-6.0651em;"><span class="pstrut" style="height:3.8283em;"></span><span class="mord"><span class="mord mathnormal">u</span></span></span><span style="top:-3.6474em;"><span class="pstrut" style="height:3.8283em;"></span><span class="mord"></span></span><span style="top:-0.9233em;"><span class="pstrut" style="height:3.8283em;"></span><span class="mord"><span class="mord mathnormal">u</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:3.5651em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:4.0651em;"><span style="top:-6.0651em;"><span class="pstrut" style="height:3.8283em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8283em;"><span style="top:-1.8723em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">&#x2211;</span></span></span><span style="top:-4.3em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.07847em;">I</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.2777em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0269em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">b</span></span></span><span style="top:-3.6474em;"><span class="pstrut" style="height:3.8283em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord munder"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6444em;"><span style="top:-1.7673em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:-0.0269em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord munder"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6444em;"><span class="svg-align" style="top:-2.2687em;"><span class="pstrut" style="height:3em;"></span><span class="stretchy" style="height:0.548em;min-width:1.6em;"><span class="brace-left" style="height:0.548em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMinYMin slice"><path d="M0 6l6-6h17c12.688 0 19.313.3 20 1 4 4 7.313 8.3 10 13
+ 35.313 51.3 80.813 93.8 136.5 127.5 55.688 33.7 117.188 55.8 184.5 66.5.688
+ 0 2 .3 4 1 18.688 2.7 76 4.3 172 5h399450v120H429l-6-1c-124.688-8-235-61.7
+-331-161C60.687 138.7 32.312 99.3 7 54L0 41V6z"/></svg></span><span class="brace-center" style="height:0.548em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMidYMin slice"><path d="M199572 214
+c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
+ 53.3-86.7 123.7-153 211-199 66.7-36 137.3-56.3 212-62h199568v120H200432c-178.3
+ 11.7-311.7 78.3-403 201-6 8-9.7 12-11 12-.7.7-6.7 1-18 1s-17.3-.3-18-1c-1.3 0
+-5-4-11-12-44.7-59.3-101.3-106.3-170-141s-145.3-54.3-229-60H0V214z"/></svg></span><span class="brace-right" style="height:0.548em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMaxYMin slice"><path d="M399994 0l6 6v35l-6 11c-56 104-135.3 181.3-238 232-57.3
+ 28.7-117 45-179 50H-300V214h399897c43.3-7 81-15 113-26 100.7-33 179.7-91 237
+-174 2.7-5 6-9 10-13 .7-1 7.3-1 20-1h17z"/></svg></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">5</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.7313em;"><span></span></span></span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.3328em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord munder"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.75em;"><span style="top:-1.6006em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:-0.0269em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord munder"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.75em;"><span class="svg-align" style="top:-2.102em;"><span class="pstrut" style="height:3em;"></span><span class="stretchy" style="height:0.548em;min-width:1.6em;"><span class="brace-left" style="height:0.548em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMinYMin slice"><path d="M0 6l6-6h17c12.688 0 19.313.3 20 1 4 4 7.313 8.3 10 13
+ 35.313 51.3 80.813 93.8 136.5 127.5 55.688 33.7 117.188 55.8 184.5 66.5.688
+ 0 2 .3 4 1 18.688 2.7 76 4.3 172 5h399450v120H429l-6-1c-124.688-8-235-61.7
+-331-161C60.687 138.7 32.312 99.3 7 54L0 41V6z"/></svg></span><span class="brace-center" style="height:0.548em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMidYMin slice"><path d="M199572 214
+c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
+ 53.3-86.7 123.7-153 211-199 66.7-36 137.3-56.3 212-62h199568v120H200432c-178.3
+ 11.7-311.7 78.3-403 201-6 8-9.7 12-11 12-.7.7-6.7 1-18 1s-17.3-.3-18-1c-1.3 0
+-5-4-11-12-44.7-59.3-101.3-106.3-170-141s-145.3-54.3-229-60H0V214z"/></svg></span><span class="brace-right" style="height:0.548em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMaxYMin slice"><path d="M399994 0l6 6v35l-6 11c-56 104-135.3 181.3-238 232-57.3
+ 28.7-117 45-179 50H-300V214h399897c43.3-7 81-15 113-26 100.7-33 179.7-91 237
+-174 2.7-5 6-9 10-13 .7-1 7.3-1 20-1h17z"/></svg></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">(</span><span class="mord">&#x2212;</span><span class="mord">3</span><span class="mclose">)</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.898em;"><span></span></span></span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.4995em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord munder"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6444em;"><span style="top:-1.7673em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:-0.0269em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord munder"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6444em;"><span class="svg-align" style="top:-2.2687em;"><span class="pstrut" style="height:3em;"></span><span class="stretchy" style="height:0.548em;min-width:1.6em;"><span class="brace-left" style="height:0.548em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMinYMin slice"><path d="M0 6l6-6h17c12.688 0 19.313.3 20 1 4 4 7.313 8.3 10 13
+ 35.313 51.3 80.813 93.8 136.5 127.5 55.688 33.7 117.188 55.8 184.5 66.5.688
+ 0 2 .3 4 1 18.688 2.7 76 4.3 172 5h399450v120H429l-6-1c-124.688-8-235-61.7
+-331-161C60.687 138.7 32.312 99.3 7 54L0 41V6z"/></svg></span><span class="brace-center" style="height:0.548em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMidYMin slice"><path d="M199572 214
+c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
+ 53.3-86.7 123.7-153 211-199 66.7-36 137.3-56.3 212-62h199568v120H200432c-178.3
+ 11.7-311.7 78.3-403 201-6 8-9.7 12-11 12-.7.7-6.7 1-18 1s-17.3-.3-18-1c-1.3 0
+-5-4-11-12-44.7-59.3-101.3-106.3-170-141s-145.3-54.3-229-60H0V214z"/></svg></span><span class="brace-right" style="height:0.548em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMaxYMin slice"><path d="M399994 0l6 6v35l-6 11c-56 104-135.3 181.3-238 232-57.3
+ 28.7-117 45-179 50H-300V214h399897c43.3-7 81-15 113-26 100.7-33 179.7-91 237
+-174 2.7-5 6-9 10-13 .7-1 7.3-1 20-1h17z"/></svg></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.7313em;"><span></span></span></span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.3328em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord munder"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6444em;"><span style="top:-1.7673em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:-0.0269em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord munder"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6444em;"><span class="svg-align" style="top:-2.2687em;"><span class="pstrut" style="height:3em;"></span><span class="stretchy" style="height:0.548em;min-width:1.6em;"><span class="brace-left" style="height:0.548em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMinYMin slice"><path d="M0 6l6-6h17c12.688 0 19.313.3 20 1 4 4 7.313 8.3 10 13
+ 35.313 51.3 80.813 93.8 136.5 127.5 55.688 33.7 117.188 55.8 184.5 66.5.688
+ 0 2 .3 4 1 18.688 2.7 76 4.3 172 5h399450v120H429l-6-1c-124.688-8-235-61.7
+-331-161C60.687 138.7 32.312 99.3 7 54L0 41V6z"/></svg></span><span class="brace-center" style="height:0.548em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMidYMin slice"><path d="M199572 214
+c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
+ 53.3-86.7 123.7-153 211-199 66.7-36 137.3-56.3 212-62h199568v120H200432c-178.3
+ 11.7-311.7 78.3-403 201-6 8-9.7 12-11 12-.7.7-6.7 1-18 1s-17.3-.3-18-1c-1.3 0
+-5-4-11-12-44.7-59.3-101.3-106.3-170-141s-145.3-54.3-229-60H0V214z"/></svg></span><span class="brace-right" style="height:0.548em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMaxYMin slice"><path d="M399994 0l6 6v35l-6 11c-56 104-135.3 181.3-238 232-57.3
+ 28.7-117 45-179 50H-300V214h399897c43.3-7 81-15 113-26 100.7-33 179.7-91 237
+-174 2.7-5 6-9 10-13 .7-1 7.3-1 20-1h17z"/></svg></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">&#xD7;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">4</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.7313em;"><span></span></span></span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.3328em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord munder"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.75em;"><span style="top:-1.4159em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord munder"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.75em;"><span class="svg-align" style="top:-2.102em;"><span class="pstrut" style="height:3em;"></span><span class="stretchy" style="height:0.548em;min-width:1.6em;"><span class="brace-left" style="height:0.548em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMinYMin slice"><path d="M0 6l6-6h17c12.688 0 19.313.3 20 1 4 4 7.313 8.3 10 13
+ 35.313 51.3 80.813 93.8 136.5 127.5 55.688 33.7 117.188 55.8 184.5 66.5.688
+ 0 2 .3 4 1 18.688 2.7 76 4.3 172 5h399450v120H429l-6-1c-124.688-8-235-61.7
+-331-161C60.687 138.7 32.312 99.3 7 54L0 41V6z"/></svg></span><span class="brace-center" style="height:0.548em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMidYMin slice"><path d="M199572 214
+c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
+ 53.3-86.7 123.7-153 211-199 66.7-36 137.3-56.3 212-62h199568v120H200432c-178.3
+ 11.7-311.7 78.3-403 201-6 8-9.7 12-11 12-.7.7-6.7 1-18 1s-17.3-.3-18-1c-1.3 0
+-5-4-11-12-44.7-59.3-101.3-106.3-170-141s-145.3-54.3-229-60H0V214z"/></svg></span><span class="brace-right" style="height:0.548em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMaxYMin slice"><path d="M399994 0l6 6v35l-6 11c-56 104-135.3 181.3-238 232-57.3
+ 28.7-117 45-179 50H-300V214h399897c43.3-7 81-15 113-26 100.7-33 179.7-91 237
+-174 2.7-5 6-9 10-13 .7-1 7.3-1 20-1h17z"/></svg></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord">&#x2212;</span><span class="mord">7</span><span class="mclose">)</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.898em;"><span></span></span></span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.5841em;"><span></span></span></span></span></span></span></span><span style="top:-0.9233em;"><span class="pstrut" style="height:3.8283em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">2</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:3.5651em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>This value is then passed into the activation function <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span>. Suppose we have set this system up so that we will go to the park if the obtained value of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">u</span></span></span></span> is larger than 0. We can model this mathematically by using a variation of the <em>Heaviside function</em>, also called the threshold function.</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>z</mi><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.36em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>0</mn><mspace width="1em"></mspace><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mtext>&#x2005;</mtext><mi mathvariant="normal">u</mi><mo>&#x2264;</mo><mn>0</mn></mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>1</mn><mspace width="1em"></mspace><mtext>for&#xA0;u&#xA0;&gt;&#xA0;0</mtext></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">z = f(u) = \begin{cases}0\quad\mathrm{for \: u \leq 0} \\ 1 \quad\text{for u &gt; 0} \end{cases}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3em;vertical-align:-1.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">0</span><span class="mspace" style="margin-right:1em;"></span><span class="mord"><span class="mord mathrm">for</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathrm">u</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&#x2264;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathrm">0</span></span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:1em;"></span><span class="mord text"><span class="mord">for&#xA0;u&#xA0;&gt;&#xA0;0</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<figure>
+  <p align="center"> <img class="noshadow" src="./resources/heaviside.gif" width="300"> </p>
+  <figcaption>Figure 3 - The Heaviside function</figcaption>
+</figure>
+<p>We obtain <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mn>2</mn><mo>&gt;</mo><mn>0</mn><mo>&#x21D2;</mo><mi>z</mi><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">u = 2 &gt; 0 \Rightarrow z = f(2) = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">u</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6835em;vertical-align:-0.0391em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&#x21D2;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>. Since the output is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>, we decide to go to the park. This is a hyper-simplification of the way our brain makes decisions. We weigh the different determining factors, apply a bias and then decide whether or not to do something. As there are only two options here, the output layer has two units: to go and not to go. In real-life and machine learning situations, however, there are many more factors that influence the output, and the output doesn&apos;t necessarily have to be binary. Considering how a single-node &quot;network&quot; already takes into account all these factors, we can imagine how extensive actual neural networks with hundreds or even thousands of nodes in different layers are. Every node takes into account multiple variables and weighs them differently, which then gets processed again by the next layer, and the next layer, and so on, until the decision making is so refined that it resembles that of a human&apos;s.</p>
+<h2 class="mume-header" id="what-was-done-in-lecture-13">What was done in Lecture 13</h2>
+
+<p>To set the foundation for Exercise 13.1, we must first understand what was done in Lecture 13 completely.</p>
+<h3 class="mume-header" id="loading-the-machine-and-dataset">Loading the machine and dataset</h3>
+
+<p>DeepLearnToolbox is an introductory machine learning library initially created for MATLAB, but works in Octave as well. The library is somewhat outdated, last updated almost 8 years ago, but it will suffice for the purposes of this report.</p>
+<p>After cloning the <a href="https://github.com/rasmusbergpalm/DeepLearnToolbox">GitHub repository</a>, the library was loaded into Octave by running:</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token function">addpath</span><span class="token punctuation">(</span><span class="token string">&apos;dlt/NN&apos;</span><span class="token punctuation">)</span>
+<span class="token function">addpath</span><span class="token punctuation">(</span><span class="token string">&apos;dlt/util&apos;</span><span class="token punctuation">)</span>
+</pre><p><em>Note that I stored the DeepLearnToolbox master directory as <code>./dlt/</code>, with <code>./</code> as the project&apos;s root folder.</em></p>
+<p>This allows Octave to make use of the functions and reserved variable names defined in DeepLearnToolbox.</p>
+<p>Next, the MNIST dataset is loaded in, this time using the larger 60000-image set for training and the 10000-image set for testing.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% LOAD ALL DATA</span>
+<span class="token comment">% Load testing images dataset</span>
+fid<span class="token operator">=</span><span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">&apos;./mnist/t10k-images.idx3-ubyte&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;r&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;b&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">fread</span><span class="token punctuation">(</span>fid<span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token string">&apos;int32&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+test_img<span class="token operator">=</span><span class="token function">fread</span><span class="token punctuation">(</span>fid<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">28</span><span class="token operator">*</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token number">10000</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">&apos;uint8&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+test_img<span class="token operator">=</span>test_img<span class="token operator">&apos;</span><span class="token punctuation">;</span>
+<span class="token function">fclose</span><span class="token punctuation">(</span>fid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">% Load testing labels dataset</span>
+fid<span class="token operator">=</span><span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">&apos;./mnist/t10k-labels.idx1-ubyte&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;r&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;b&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">fread</span><span class="token punctuation">(</span>fid<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">&apos;int32&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+test_lbl<span class="token operator">=</span><span class="token function">fread</span><span class="token punctuation">(</span>fid<span class="token punctuation">,</span><span class="token number">10000</span><span class="token punctuation">,</span><span class="token string">&apos;uint8&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">fclose</span><span class="token punctuation">(</span>fid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">% Loading training images dataset</span>
+fid<span class="token operator">=</span><span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">&apos;./mnist/train-images.idx3-ubyte&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;r&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;b&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">fread</span><span class="token punctuation">(</span>fid<span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token string">&apos;int32&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+train_img<span class="token operator">=</span><span class="token function">fread</span><span class="token punctuation">(</span>fid<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">28</span><span class="token operator">*</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token number">60000</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">&apos;uint8&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+train_img<span class="token operator">=</span>train_img<span class="token operator">&apos;</span><span class="token punctuation">;</span>
+<span class="token function">fclose</span><span class="token punctuation">(</span>fid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">% Loading training labels dataset</span>
+fid<span class="token operator">=</span><span class="token function">fopen</span><span class="token punctuation">(</span><span class="token string">&apos;./mnist/train-labels.idx1-ubyte&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;r&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;b&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">fread</span><span class="token punctuation">(</span>fid<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">&apos;int32&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+train_lbl<span class="token operator">=</span><span class="token function">fread</span><span class="token punctuation">(</span>fid<span class="token punctuation">,</span><span class="token number">60000</span><span class="token punctuation">,</span><span class="token string">&apos;uint8&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">fclose</span><span class="token punctuation">(</span>fid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>C-style I/O was explained in the last report, so we can move on to data preparation.</p>
+<h3 class="mume-header" id="dataset-preparation-and-labeling">Dataset preparation and labeling</h3>
+
+<p>In machine learning, dataset preparation is important, as it might make or break the training process, which will in turn have a major effect on the produced model.</p>
+<p>One of the most important steps in data preparation has been discussed in report 11, more specifically in the example of Principal Component Analysis (the GPA survey analogy). For the different types of data to contribute equally to the analysis, <strong>standardization</strong> is required.</p>
+<p>As mentioned in report 11, standardization can be obtained by converting all numerical data points <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span></span>:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>z</mi><mo>=</mo><mfrac><mrow><mi>x</mi><mo>&#x2212;</mo><mi>&#x3BC;</mi></mrow><mi>&#x3C3;</mi></mfrac></mrow><annotation encoding="application/x-tex">z = \dfrac{x - \mu}{\sigma}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.9463em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.2603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">&#x3C3;</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">&#x3BC;</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>This will shift the mean of the data to be 0 and enforce the same scale on all types of data, effectively normalizing the effects they have.</p>
+<p>After preparing the image data, we can now move on to creating one-hot vectors for the classes. This is essentially just another way of labeling the objects, telling the model which class the object actually belongs to.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% One-hot vectors</span>
+A <span class="token operator">=</span> <span class="token function">eye</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+train_d <span class="token operator">=</span> <span class="token function">A</span><span class="token punctuation">(</span>train_lbl<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+test_d <span class="token operator">=</span> <span class="token function">A</span><span class="token punctuation">(</span>test_lbl<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>To do this, we create an identity matrix of size 10x10. As indexing in Octave starts at <code>1</code> instead of <code>0</code>, we need to add 1 to the elements in <code>train_lbl</code> so that there will be no zero values. This means the values of <code>train_d</code> and <code>test_d</code> are going to be row vectors of zeros and a single 1 in a specific position, which is determined by the labels in <code>train_lbl</code> and <code>test_lbl</code>. Essentially, instead of telling the model a specific value like 4 or 6, we are giving the model the <em>position</em> of the class the object belongs to. For example, let&apos;s say the value of <code>train_lbl(1)</code> is equal to <code>4</code>. This means the handwritten digit in the first image is 4. Our code will tell the model that the correct class exists in the <em>fifth</em> position in the ten-element array. This is because the first position is occupied by the <em>zero</em> class, second position by the <em>one</em> class, and so on.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token function">train_lbl</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token function">train_d</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">A</span><span class="token punctuation">(</span><span class="token function">train_lbl</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">train_d</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span>
+  <span class="token number">0</span>
+  <span class="token number">0</span>
+  <span class="token number">0</span>
+  <span class="token number">0</span>
+  <span class="token number">1</span>
+  <span class="token number">0</span>
+  <span class="token number">0</span>
+  <span class="token number">0</span>
+  <span class="token number">0</span>
+  <span class="token number">0</span>
+</pre><h3 class="mume-header" id="neural-network-initialization">Neural network initialization</h3>
+
+<p>After data preparation and labeling, the neural network can now be constructed:</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Initiate neural network</span>
+nn <span class="token operator">=</span> <span class="token function">nnsetup</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">784</span> <span class="token number">100</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Clears prior networks and sets up a new one</span>
+opts<span class="token punctuation">.</span>numepochs <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+opts<span class="token punctuation">.</span>batchsize <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+</pre><p>The first line sets up a neural network with 784 input units, 100 units in the intermediate layer and 10 output units. We have 784 input units because that is the number of pixels in our images, and 10 because that is the amount of different classes we have (from 0 to 9). <code>opts.numepochs</code> is a parameter that defines how many times the network &quot;sees&quot; a single image in each training. <code>opts.batchsize</code> sets how often the weights are updated. Setting it to <code>100</code> like we did means the weights are updated once the network has seen 100 images.</p>
+<p>To train the neural network, we pass the variable <code>nn</code> which is the name of the network we just set up, <code>train_img</code> for the training data, <code>train_d</code> for the one-hot vectors (as labeling) and <code>opts</code> for the options we just defined.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Train neural network then test the accuracy with test dataset</span>
+<span class="token punctuation">[</span>nn<span class="token punctuation">,</span>L<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">nntrain</span><span class="token punctuation">(</span>nn<span class="token punctuation">,</span> train_img<span class="token punctuation">,</span> train_d<span class="token punctuation">,</span> opts<span class="token punctuation">)</span><span class="token punctuation">;</span>
+pred <span class="token operator">=</span> <span class="token function">nnpredict</span><span class="token punctuation">(</span>nn<span class="token punctuation">,</span>test_img<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">mean</span><span class="token punctuation">(</span>pred<span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> test_lbl<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span> <span class="token comment">% Accuracy</span>
+</pre><p>Running the code gives us an accuracy around 92%:</p>
+<figure>
+  <p align="center"> <img src="./resources/singleiteration.png" width="500"> </p>
+  <figcaption>Figure 4 - The output of the script from lecture 13</figcaption>
+</figure>
+<h2 class="mume-header" id="exercise-131">Exercise 13.1</h2>
+
+<p align="center"> <img src="./resources/CAPS13_Assignment.png" width="500"> </p>
+<h3 class="mume-header" id="problem-1-improvement-of-accuracy-with-repeated-training">Problem 1: Improvement of accuracy with repeated training</h3>
+
+<p>We can train the network multiple times by putting the <code>nntrain()</code> command inside a <code>for</code> loop. We set the number of iterations to be 10.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab">accuracy <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-for">for</span> <span class="token number">i</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span>
+  <span class="token punctuation">[</span>nn<span class="token punctuation">,</span>L<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">nntrain</span><span class="token punctuation">(</span>nn<span class="token punctuation">,</span> train_img<span class="token punctuation">,</span> train_d<span class="token punctuation">,</span> opts<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  pred <span class="token operator">=</span> <span class="token function">nnpredict</span><span class="token punctuation">(</span>nn<span class="token punctuation">,</span>test_img<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">test_lbl</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token operator">&apos;</span><span class="token punctuation">;</span>
+  <span class="token function">accuracy</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">mean</span><span class="token punctuation">(</span>pred<span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> test_lbl<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span> <span class="token comment">% Accuracy</span>
+endfor
+</pre><p>To measure the accuracy, we take the average of a logical matrix defined by <code>pred-1 == test_lbl</code>. This compares the predictions with the labels of the testing dataset. Recall that as we added 1 to the classes&apos; name earlier to avoid an indexing error, we need to subtract the names by 1 again so that correct guesses will actually match the labels, and not be shifted by 1.</p>
+<p>This time, we store the accuracy of each iteration in a new element of the array <code>accuracy</code>, so that we can plot it later.</p>
+<p>Running the code, we get accuracy numbers that have an increasing trend:</p>
+<figure>
+  <p align="center"> <img src="./resources/10timesacc.png" width="500"> </p>
+  <figcaption>Figure 5 - The accuracy has an increasing trend.</figcaption>
+</figure>
+<p>To plot the accuracy numbers against the number of iterations,</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab">hold on
+<span class="token function">plot</span><span class="token punctuation">(</span>accuracy<span class="token punctuation">,</span> &quot;color&quot;<span class="token punctuation">,</span> &quot;r&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>accuracy<span class="token punctuation">,</span> <span class="token string">&apos;o&apos;</span><span class="token punctuation">,</span> &quot;color&quot;<span class="token punctuation">,</span> &quot;r&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+yl <span class="token operator">=</span> <span class="token function">ylim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Find limits of y axis to do adjustment for axis label placement</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;Number of iterations&quot;<span class="token punctuation">)</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Accuracy of <span class="token function">predictions</span> <span class="token punctuation">(</span><span class="token comment">%)&quot;,&quot;position&quot;,[-1 (yl(1) + yl(2))/2])</span>
+</pre><figure>
+  <p align="center"> <img src="./resources/10times.png" width="400"> </p>
+  <figcaption>Figure 6 - Plot of the accuracy numbers gotten</figcaption>
+</figure>
+<p>Without touching the neural network set-up, we&apos;re already able to achieve high accuracy numbers just by training the model multiple times. This is analogous to how the human brain learns. It might not have perfect accuracy the first few times, but given enough time to repeatedly do the same thing, it learns to do things a little differently each time, and learns how to do things better.</p>
+<p>However, rather surprisingly, even though the trend of accuracy is going up, sometimes the number stagnates or even drops. This is because the model starts to <strong>overfit</strong> the dataset, meaning the predictors in the model are starting to overcomplicate the prediction process. As a result, the model gets <em>worse</em> at recognizing patterns in the data. As explained in lecture 12, this is similar to fitting polynomial functions to data points and setting the order too high. The predictor becomes meaningless as it also tries to describe <em>noise</em>, which are patterns in the data that are not as strong as the &quot;correct&quot; patterns, but exist as a result of natural error.</p>
+<p>In the context of handwriting, this might be slight tendencies in some of the training data where some people&apos;s handwriting of 4s might look like 9s, but the pattern is not very strong, which makes the model ignore it in the first few iterations, but as the pattern gets reinforced in later iterations, the model starts to recognize it as a valid pattern, which lessens its accuracy when tested against the testing dataset. This is why when training a model, when the accuracy starts to plateau, or even drop, the model is starting to overfit. We need to stop the training and use the iteration with the highest accuracy.</p>
+<h3 class="mume-header" id="problem-2-modifying-the-neural-network">Problem 2: Modifying the neural network</h3>
+
+<p>Next, we can try modifying the neural network setup to see the effects it has on the accuracy of the model. To do so, we can change the elements of the vector in <code>nnsetup()</code>. More elements indicate more layers, while the numbers themselves represent how many units are in each layer.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab">nn <span class="token operator">=</span> <span class="token function">nnsetup</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">784</span> <span class="token number">30</span> <span class="token number">30</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Clears prior networks and sets up a new one</span>
+</pre><p>This will set up a neural network with two intermediate layers of 30 units each. Running the code again, we get these accuracy numbers:</p>
+<figure>
+  <p align="center"> <img src="./resources/modifiedlayersacc.png" width="500"> </p>
+  <figcaption>Figure 7 - Accuracy numbers with two 30-unit intermediate layers</figcaption>
+</figure>
+<figure>
+  <p align="center"> <img src="./resources/modifiedlayers.png" width="400"> </p>
+  <figcaption>Figure 8 - Plot of accuracy numbers with modified layers </figcaption>
+</figure>
+<p>We see that the trend of accuracy is still up, but the graph looks a bit more erratic. The model doesn&apos;t reach as high of an accuracy even after the tenth iteration, when compared to just the single-layer network. However, the training time was faster.</p>
+<h3 class="mume-header" id="problem-3-varying-the-layers-and-units">Problem 3: Varying the layers and units</h3>
+
+<p>To see how units and layers change the accuracy of the NN, we can try isolating the two variables. First, we keep the number of intermediate layers constant at 2, and vary the number of units in each layer:</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Keep number of layers and vary units</span>
+maxAccuracies <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token number">j</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-for">for</span> u <span class="token operator">=</span> <span class="token number">30</span><span class="token operator">:</span><span class="token number">10</span><span class="token operator">:</span><span class="token number">100</span>
+  <span class="token comment">% Initiate neural network</span>
+  nn <span class="token operator">=</span> <span class="token function">nnsetup</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">784</span> u u <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Clears prior networks and sets up a new one</span>
+  opts<span class="token punctuation">.</span>numepochs <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  opts<span class="token punctuation">.</span>batchsize <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+
+  accuracy <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword keyword-for">for</span> <span class="token number">i</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span> <span class="token comment">% Train and evaluate accuracy 10 times</span>
+    <span class="token punctuation">[</span>nn<span class="token punctuation">,</span>L<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">nntrain</span><span class="token punctuation">(</span>nn<span class="token punctuation">,</span> train_img<span class="token punctuation">,</span> train_d<span class="token punctuation">,</span> opts<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pred <span class="token operator">=</span> <span class="token function">nnpredict</span><span class="token punctuation">(</span>nn<span class="token punctuation">,</span>test_img<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">accuracy</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">mean</span><span class="token punctuation">(</span>pred<span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> test_lbl<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span> <span class="token comment">% Accuracy</span>
+  endfor
+
+  <span class="token comment">% Plot the acccuracy of each iteration</span>
+  hold on
+  <span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">j</span><span class="token punctuation">)</span>
+  <span class="token function">plot</span><span class="token punctuation">(</span>accuracy<span class="token punctuation">,</span> <span class="token string">&apos;o&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  yl <span class="token operator">=</span> <span class="token function">ylim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Find limits of y axis to do adjustment for axis label placement</span>
+  <span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;Number of iterations&quot;<span class="token punctuation">)</span>
+  <span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Accuracy of <span class="token function">predictions</span> <span class="token punctuation">(</span><span class="token comment">%)&quot;,&quot;position&quot;,[-2 (yl(1) + yl(2))/2])</span>
+  <span class="token function">title</span><span class="token punctuation">(</span><span class="token function">sprintf</span><span class="token punctuation">(</span>&quot;Units <span class="token operator">=</span> <span class="token comment">%d&quot;, u))</span>
+
+  <span class="token function">maxAccuracies</span><span class="token punctuation">(</span><span class="token number">j</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>accuracy<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Store the highest accuracy number</span>
+
+  <span class="token number">j</span> <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+endfor
+<span class="token function">axes</span><span class="token punctuation">(</span><span class="token string">&apos;visible&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;off&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;title&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Accuracy of neural networks with units per intermediate layer from 30 to 100&apos;</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+maxAccuracies
+</pre><p>First, we set up a <code>for</code> loop that iterates from 30 through 100 with a step of 10. This means we are testing neural networks of 2 intermediate layers, with 30, 40, 50, 60, 70, 80, 90 and 100 units in each layer. Then we set up the neural network by passing the number of units we want into <code>nnsetup()</code>. Then for each specific unit number, we train and test the NN ten times, plot the accuracy numbers and store the maximum accuracy into an array for later use.</p>
+<figure>
+  <p align="center"> <img src="resources/variedunits.png"> </p>
+  <figcaption>Figure 9 - The accuracy plots of neuralDigits.m</figcaption>
+</figure>
+<p>If we see the maximum accuracy numbers, we get an increasing trend:</p>
+<figure>
+  <p align="center"> <img src="./resources/maxAccUnits.png" width="500"> </p>
+  <figcaption>Figure 10 - The maximum accuracy has an increasing trend</figcaption>
+</figure>
+<p>Next, we keep the number of units constant and change the number of layers. Doing this in a separate script to shorten run time,</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Keep number of units and vary layers</span>
+<span class="token comment">% Initiate first neural network</span>
+nn <span class="token operator">=</span> <span class="token function">nnsetup</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">784</span> <span class="token number">100</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Clears prior networks and sets up a new one</span>
+opts<span class="token punctuation">.</span>numepochs <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+opts<span class="token punctuation">.</span>batchsize <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+
+accuracy <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-for">for</span> <span class="token number">i</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span> <span class="token comment">% Train and evaluate accuracy 10 times</span>
+  <span class="token punctuation">[</span>nn<span class="token punctuation">,</span>L<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">nntrain</span><span class="token punctuation">(</span>nn<span class="token punctuation">,</span> train_img<span class="token punctuation">,</span> train_d<span class="token punctuation">,</span> opts<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  pred <span class="token operator">=</span> <span class="token function">nnpredict</span><span class="token punctuation">(</span>nn<span class="token punctuation">,</span>test_img<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">accuracy</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">mean</span><span class="token punctuation">(</span>pred<span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> test_lbl<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span> <span class="token comment">% Accuracy</span>
+endfor
+
+<span class="token comment">% Plot the acccuracy of each iteration</span>
+hold on
+<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>accuracy<span class="token punctuation">,</span> <span class="token string">&apos;o&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+yl <span class="token operator">=</span> <span class="token function">ylim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Find limits of y axis to do adjustment for axis label placement</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;Number of iterations&quot;<span class="token punctuation">)</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Accuracy of <span class="token function">predictions</span> <span class="token punctuation">(</span><span class="token comment">%)&quot;,&quot;position&quot;,[-2 (yl(1) + yl(2))/2])</span>
+<span class="token function">title</span><span class="token punctuation">(</span>&quot;<span class="token number">1</span> intermediate layer&quot;<span class="token punctuation">)</span>
+
+<span class="token function">maxAccuracies</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>accuracy<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Store the highest accuracy number</span>
+
+<span class="token comment">% Initiate second neural network</span>
+nn <span class="token operator">=</span> <span class="token function">nnsetup</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">784</span> <span class="token number">100</span> <span class="token number">100</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Clears prior networks and sets up a new one</span>
+opts<span class="token punctuation">.</span>numepochs <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+opts<span class="token punctuation">.</span>batchsize <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+
+accuracy <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-for">for</span> <span class="token number">i</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span> <span class="token comment">% Train and evaluate accuracy 10 times</span>
+  <span class="token punctuation">[</span>nn<span class="token punctuation">,</span>L<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">nntrain</span><span class="token punctuation">(</span>nn<span class="token punctuation">,</span> train_img<span class="token punctuation">,</span> train_d<span class="token punctuation">,</span> opts<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  pred <span class="token operator">=</span> <span class="token function">nnpredict</span><span class="token punctuation">(</span>nn<span class="token punctuation">,</span>test_img<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">accuracy</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">mean</span><span class="token punctuation">(</span>pred<span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> test_lbl<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span> <span class="token comment">% Accuracy</span>
+endfor
+
+<span class="token comment">% Plot the acccuracy of each iteration</span>
+<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>accuracy<span class="token punctuation">,</span> <span class="token string">&apos;o&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+yl <span class="token operator">=</span> <span class="token function">ylim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Find limits of y axis to do adjustment for axis label placement</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;Number of iterations&quot;<span class="token punctuation">)</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Accuracy of <span class="token function">predictions</span> <span class="token punctuation">(</span><span class="token comment">%)&quot;,&quot;position&quot;,[-2 (yl(1) + yl(2))/2])</span>
+<span class="token function">title</span><span class="token punctuation">(</span>&quot;<span class="token number">2</span> intermediate layers&quot;<span class="token punctuation">)</span>
+
+<span class="token function">maxAccuracies</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>accuracy<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Store the highest accuracy number</span>
+
+<span class="token comment">% Initiate third neural network</span>
+nn <span class="token operator">=</span> <span class="token function">nnsetup</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">784</span> <span class="token number">100</span> <span class="token number">100</span> <span class="token number">100</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Clears prior networks and sets up a new one</span>
+opts<span class="token punctuation">.</span>numepochs <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+opts<span class="token punctuation">.</span>batchsize <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+
+accuracy <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-for">for</span> <span class="token number">i</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span> <span class="token comment">% Train and evaluate accuracy 10 times</span>
+  <span class="token punctuation">[</span>nn<span class="token punctuation">,</span>L<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">nntrain</span><span class="token punctuation">(</span>nn<span class="token punctuation">,</span> train_img<span class="token punctuation">,</span> train_d<span class="token punctuation">,</span> opts<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  pred <span class="token operator">=</span> <span class="token function">nnpredict</span><span class="token punctuation">(</span>nn<span class="token punctuation">,</span>test_img<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">accuracy</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">mean</span><span class="token punctuation">(</span>pred<span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> test_lbl<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">100</span> <span class="token comment">% Accuracy</span>
+endfor
+
+<span class="token comment">% Plot the acccuracy of each iteration</span>
+<span class="token function">subplot</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>accuracy<span class="token punctuation">,</span> <span class="token string">&apos;o&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+yl <span class="token operator">=</span> <span class="token function">ylim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Find limits of y axis to do adjustment for axis label placement</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;Number of iterations&quot;<span class="token punctuation">)</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Accuracy of <span class="token function">predictions</span> <span class="token punctuation">(</span><span class="token comment">%)&quot;,&quot;position&quot;,[-2 (yl(1) + yl(2))/2])</span>
+<span class="token function">title</span><span class="token punctuation">(</span>&quot;<span class="token number">3</span> intermediate layers&quot;<span class="token punctuation">)</span>
+
+<span class="token function">maxAccuracies</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>accuracy<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Store the highest accuracy number</span>
+
+maxAccuracies
+</pre><p>We are just doing the same steps, but varying the number of layers this time. The following plots are produced:</p>
+<figure>
+  <p align="center"> <img src="./resources/variedlayers.png"> </p>
+  <figcaption>Figure 11 - Accuracy plots of variedLayers.m</figcaption>
+</figure>
+<figure>
+  <p align="center"> <img src="./resources/maxAccLayers.png" width="500"> </p>
+  <figcaption>Figure 12 - The accuracy decreases as the number of layers increase.</figcaption>
+</figure>
+<p>It appears additional layers don&apos;t have a positive effect on the accuracy of the NN. In fact, the accuracy decreases instead. Comparing to the number of units, where there was a trend of increasing accuracy, we can hypothesize that an efficient NN model would be one that has few intermediate layers and a larger amount of units in each layer.</p>
+<p>To confirm this, we set up a one intermediate layer NN (like Problem 1) but this time with 300 units in the intermediate layer.</p>
+<p>The following plot is produced:</p>
+<figure>
+  <p align="center"> <img src="./resources/optimized.png" width="500"> </p>
+  <figcaption>Figure 13 - The optimized model reaches a considerably high accuracy number</figcaption>
+</figure>
+<figure>
+  <p align="center"> <img src="./resources/accoptimized.png" width="500"> </p>
+  <figcaption>Figure 14 - The accuracy numbers for the optimized model</figcaption>
+</figure>
+<p>The highest accuracy reached is 95.59%, which confirms our hypothesis.</p>
+<h2 class="mume-header" id="footnote">Footnote</h2>
+
+<ol>
+<li>While theory is important to build a foundation upon, in order to truly get the best results, learning from trial and error is always best, when possible.</li>
+<li>Machine learning models are highly specific, in that there is no one model that is better than all the others at all tasks. Each task will have a different model that&apos;s optimized for it.</li>
+<li>Machine learning starts from the data. If the quality of training data is bad, we can&apos;t expect the model to perform well. In order to create a well-performing model, we need to consider the data that the model will work on after training, design a training dataset with that in mind, and prepare it for training.</li>
+</ol>
+<h2 class="mume-header" id="resources-and-further-reading">Resources and further reading</h2>
+
+<ol>
+<li><a href="https://www.ibm.com/cloud/blog/supervised-vs-unsupervised-learning">Supervised vs. unsupervised learning</a></li>
+<li><a href="https://www.ibm.com/topics/unsupervised-learning#:~:text=Unsupervised%20learning%2C%20also%20known%20as,the%20need%20for%20human%20intervention.">An overview of unsupervised learning</a></li>
+<li><a href="https://towardsdatascience.com/designing-your-neural-networks-a5e4617027ed">Basics of neural network design</a></li>
+<li><a href="https://arxiv.org/pdf/2108.02497.pdf">Avoiding machine learning pitfalls</a></li>
+<li><a href="https://thesai.org/Downloads/Volume11No7/Paper_19-Handwriting_Recognition_using_Artificial_Intelligence.pdf">Handwriting Recognition using Artificial Intelligence</a></li>
+</ol>
+<br>
+<style>
+  figcaption{
+    text-align:center;
+    font-size:9pt
+  }
+  img{
+    filter: drop-shadow(0px 0px 5px );
+  }
+  .noshadow{
+    filter: none;
+  }
+</style>
+      </div>
+      <div class="md-sidebar-toc">
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open>
+        <summary class="md-toc-link-wrapper">
+          <a href="#report-13" class="md-toc-link"><p>Report 13</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open>
+        <summary class="md-toc-link-wrapper">
+          <a href="#introduction-to-feed-forward-neural-networks" class="md-toc-link"><p>Introduction to Feed-forward Neural Networks</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#an-example" class="md-toc-link">
+            <p>An example</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open>
+        <summary class="md-toc-link-wrapper">
+          <a href="#what-was-done-in-lecture-13" class="md-toc-link"><p>What was done in Lecture 13</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#loading-the-machine-and-dataset" class="md-toc-link">
+            <p>Loading the machine and dataset</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#dataset-preparation-and-labeling" class="md-toc-link">
+            <p>Dataset preparation and labeling</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#neural-network-initialization" class="md-toc-link">
+            <p>Neural network initialization</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open>
+        <summary class="md-toc-link-wrapper">
+          <a href="#exercise-131" class="md-toc-link"><p>Exercise 13.1</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#problem-1-improvement-of-accuracy-with-repeated-training" class="md-toc-link">
+            <p>Problem 1: Improvement of accuracy with repeated training</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#problem-2-modifying-the-neural-network" class="md-toc-link">
+            <p>Problem 2: Modifying the neural network</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#problem-3-varying-the-layers-and-units" class="md-toc-link">
+            <p>Problem 3: Varying the layers and units</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#footnote" class="md-toc-link">
+            <p>Footnote</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#resources-and-further-reading" class="md-toc-link">
+            <p>Resources and further reading</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>

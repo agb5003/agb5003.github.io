@@ -1,0 +1,420 @@
+@media only screen and (min-width: 1000px){
+/* CSS that should be displayed if width is larger 
+    than 768px goes here */
+    body {
+        flex: auto;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Roboto Mono'; font-size: 18px;
+    }
+    
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+         }
+    }
+    
+    .author {
+        font-size: 13px;
+        margin: 20px;
+        color: black;
+        font-family: 'Roboto Mono'
+    }
+    .author:hover {
+        cursor: default;
+    }
+    
+    .homepageTitle, .homepageTitle a {
+        font-size: 27px;
+        margin-bottom: auto;
+        color: black;
+        text-decoration: none;
+        font-family: 'Roboto Mono';
+    }
+    .homepageTitle:hover {
+        cursor: pointer;
+    }
+    .homepageContainer {
+        position: relative;
+        flex: auto;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .menuAndDirContainer {
+        animation: fadeInAnimation ease 0.25s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    
+        flex: auto;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        position: absolute;
+        top: 55%; /* CHANGE THESE TO MOVE MENU AROUND */
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .menuContainer {
+        width: 250px; /* CONTROLS WIDTH OF VERTICAL MENU */
+        height: fit-content;
+        border: none;
+        background-color: #eee;
+        border-radius: 10px;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    .menuContainerProjects { /* Styles ONLY projects page*/
+        width: 250px;
+        height: fit-content;
+        border: none;
+        background-color: #eee;
+        border-radius: 10px;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    .vertical-menu-landing { /* Styles landing page menu ONLY */
+        width: 300px;
+        border: none;
+        border-radius: 10px;
+    }
+    .vertical-menu-landing a {
+        background-color: #eee;
+        color: black;
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+    }
+    .vertical-menu-landing a:hover, .vertical-menu a:focus  {
+        background-color: #ccc;
+        outline: none;
+    }
+    .vertical-menu-landing > .spotify {
+        color: #2ca356;
+    }
+    .vertical-menu-landing > .youtube {
+        color: #FE0000;
+    }
+    .vertical-menu-landing > .lastfm {
+        color: #a24b4d;
+    }
+    
+    .vertical-menu {
+        width: 300px;
+        border: none;
+        border-radius: 10px;
+        max-height: 288px;
+        overflow: auto;
+    }
+    .vertical-menu a {
+        background-color: #eee;
+        color: #5a5a5a;
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+    }
+    .vertical-menu a:hover, .vertical-menu a:focus  {
+        background-color: #ccc;
+        outline: none;
+    }
+    
+    .backButtonContainer {
+        margin: 15px;
+        width: 250px;
+        height: fit-content;
+        border: none;
+        background-color: #eee;
+        border-radius: 10px;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .backButtonMenu {
+        width: 250px;
+        border: none;
+        border-radius: 10px;
+    }
+    .backButtonMenu > .backButton {
+        background-color: #eee;
+        color: #5a5a5a;
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+    }
+    .backButtonMenu > .backButton:hover, .backButtonMenu > backButton:focus  {
+        background-color: #ccc;
+        outline: none;
+    }
+    
+    .bottomBox {
+        width: 100%;
+        bottom: 0px;
+        position: fixed;
+        height: 50px;
+    }
+    .directory {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: fit-content;
+        font-size: 14px;
+        color: black;
+    }
+    .directory:hover {
+        cursor: default;
+    }
+    .directory a {
+        color: black;
+    }
+    .nerdge {
+        font-size: 40px;
+        right: 20px;
+        position: absolute;
+        top: -50px;
+        width: fit-content;
+    }
+    .nerdgeLogo > a {
+        text-decoration: none;
+    }
+    
+    /* STYLES FOR LONG FORM TEXT (REPORTS, NOTES, ETC)*/
+    
+    .main{ /* Styles the main body for long text content */
+        max-width: 800px;
+    }
+}
+
+@media only screen and (max-width: 999px){ /* CSS displayed for narrow screens goes here */
+
+    body {
+        flex: auto;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Roboto Mono'; font-size: 18px;
+    }
+    
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+         }
+    }
+    
+    .author {
+        font-size: 13px;
+        margin: 20px;
+        color: black;
+        font-family: 'Roboto Mono'
+    }
+    .author:hover {
+        cursor: default;
+    }
+    
+    .homepageTitle, .homepageTitle a {
+        font-size: 27px;
+        margin-bottom: auto;
+        color: black;
+        text-decoration: none;
+        font-family: 'Roboto Mono';
+    }
+    .homepageTitle:hover {
+        cursor: pointer;
+    }
+    .homepageContainer {
+        position: relative;
+        flex: auto;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menuAndDirContainer {
+        animation: fadeInAnimation ease 0.25s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    
+        flex: auto;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        position: absolute;
+        top: 55%; /* CHANGE THESE TO MOVE MENU AROUND */
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .menuContainer {
+        width: 225px;
+        height: fit-content;
+        border: none;
+        background-color: #eee;
+        border-radius: 10px;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    .menuContainerProjects { /* Styles ONLY projects page*/
+        width: 250px;
+        height: fit-content;
+        border: none;
+        background-color: #eee;
+        border-radius: 10px;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    .vertical-menu-landing { /* Styles landing page menu ONLY */
+        width: 300px;
+        border: none;
+        border-radius: 10px;
+        overflow: auto;
+    }
+    .vertical-menu-landing a {
+        background-color: #eee;
+        color: black;
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+    }
+    .vertical-menu-landing a:hover, .vertical-menu a:focus  {
+        background-color: #ccc;
+        outline: none;
+    }
+    .vertical-menu-landing > .spotify {
+        color: #2ca356;
+    }
+    .vertical-menu-landing > .youtube {
+        color: #FE0000;
+    }
+    .vertical-menu-landing > .lastfm {
+        color: #a24b4d;
+    }
+    
+    .vertical-menu {
+        width: 300px;
+        border: none;
+        border-radius: 10px;
+        max-height: 288px;
+        overflow: auto;
+    }
+    .vertical-menu a {
+        background-color: #eee;
+        color: #5a5a5a;
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+    }
+    .vertical-menu a:hover, .vertical-menu a:focus  {
+        background-color: #ccc;
+        outline: none;
+    }
+    
+    .backButtonContainer {
+        margin: 15px;
+        width: 225px;
+        height: fit-content;
+        border: none;
+        background-color: #eee;
+        border-radius: 10px;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .backButtonMenu {
+        width: 225px;
+        border: none;
+        border-radius: 10px;
+    }
+    .backButtonMenu > .backButton {
+        background-color: #eee;
+        color: #5a5a5a;
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+    }
+    .backButtonMenu > .backButton:hover, .backButtonMenu > backButton:focus  {
+        background-color: #ccc;
+        outline: none;
+    }
+    
+    .bottomBox {
+        width: 100%;
+        bottom: 0px;
+        position: fixed;
+        height: 50px;
+    }
+    .directory {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: fit-content;
+        font-size: 14px;
+        color: black;
+    }
+    .directory:hover {
+        cursor: default;
+    }
+    .directory a {
+        color: black;
+    }
+    .nerdge {
+        font-size: 40px;
+        right: 20px;
+        position: absolute;
+        top: -50px;
+        width: fit-content;
+    }
+    .nerdgeLogo > a {
+        text-decoration: none;
+    }
+    
+    /* STYLES FOR LONG FORM TEXT (REPORTS, NOTES, ETC)*/
+    
+    .main{ /* Styles the main body for long text content */
+        max-width: 90%;
+        font-size: 16px;
+    }
+    
+    
+}

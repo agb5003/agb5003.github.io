@@ -1,0 +1,818 @@
+<!DOCTYPE html><html><head>
+      <title>CAPS_07_C2TB1702</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="report-7">Report 7</h1>
+
+<p>Maximilian Fernaldy - C2TB1702</p>
+<p align="center"> <img src="./resources/CAPS07_Assignment.png"> </p>
+<h2 class="mume-header" id="problem-1">Problem 1</h2>
+
+<p>In problem 1, we are asked to create digital data of sinusoidal waves with different arbitrary frequencies, play them as audio signals and plot them in the time domain and frequency domain.</p>
+<p>First we set the parameters for the waves. For this exercise, I will use the notes A4, A5, A6 and A7 from the ubiquitous 12-tone equal temperament scale. This means the notes are spaced an octave away from each other, or in other words, each one of them is twice the frequency of the note an octave below it. This results in the following frequencies:</p>
+<ol>
+    <li>A4 = 440 Hz</li>
+    <li>A5 = 880 Hz</li>
+    <li>A6 = 1760 Hz</li>
+    <li>A7 = 3520 Hz</li>
+</ol>
+<p>And now we can start creating them. To do this, we can use a for loop to iterate through the different frequencies we want the wave to be.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token keyword keyword-for">for</span> <span class="token number">i</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token operator">:</span><span class="token number">3</span>
+  <span class="token comment">% All the code snippets in this problem will exist here,</span>
+  <span class="token comment">% unless stated otherwise.</span>
+endfor
+</pre><p>Inside this for loop, we can start creating the sinusoidal waves. <strong>Recall that the code snippets for this problem are always inside the <code>for</code> loop iterating through <code>i</code>, unless stated otherwise.</strong></p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Frequency of the sine wave we want to create, decides the pitch of the sound.</span>
+fsin <span class="token operator">=</span> <span class="token number">440</span><span class="token operator">*</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">i</span><span class="token punctuation">;</span>
+lineTitle<span class="token punctuation">{</span><span class="token number">i</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token function">num2str</span><span class="token punctuation">(</span>fsin<span class="token punctuation">)</span> &quot; Hz&quot;<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">% Create cell array for legending</span>
+T <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">/</span>fsin<span class="token punctuation">;</span> <span class="token comment">% Period of the wave</span>
+amplitude <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">;</span><span class="token comment">% Amplitude of the wave</span>
+</pre><p>With the basic wave properties defined, we then create digital data of the wave by creating &quot;samples&quot;, something that needs to be defined for digital audio data. To do this, we select a sample rate and duration, then multiply the two to get the total number of samples. I will choose 44100 Hz, which is not random. 44100 Hz is the most common sample rate used in CD-quality digital audio.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Define the sample frequency of the sound</span>
+sampleRate <span class="token operator">=</span> <span class="token number">44100</span><span class="token punctuation">;</span> <span class="token comment">% Using standard CD quality sample frequency</span>
+sampleLength <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">/</span>sampleRate<span class="token punctuation">;</span> <span class="token comment">% Length of time the sample is held for</span>
+
+<span class="token comment">% Set duration of sound in seconds</span>
+duration <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token comment">% Total number of samples in the whole duration</span>
+samples <span class="token operator">=</span> <span class="token function">round</span><span class="token punctuation">(</span>duration<span class="token operator">/</span>sampleLength<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+sampleSpace <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">:</span>samples<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">% Creates a space for t to draw from</span>
+t <span class="token operator">=</span> sampleLength<span class="token operator">*</span>sampleSpace<span class="token punctuation">;</span>
+</pre><p><code>sampleSpace</code> is an array with step of 1 and size of <code>samples</code>. We have to remember that in computers, time is quantized, or discrete, instead of continuous. Computers have a certain &quot;tick space&quot; where certain events can happen, and nothing can happen between two ticks. This is why we need to define <code>sampleSpace</code> as it quantizes time into very small portions (or ticks) of it, so that different events can happen on different ticks inside the space. We need to subtract 1 from <code>samples</code> because we are iterating from 0 instead of 1, so to keep the length consistent to the actual number of samples, we need to subtract 1. Then, to synchronize the ticks with our samples, we set <code>t = sampleLength*sampleSpace;</code> so that the length of a tick in <code>sampleSpace</code> is the same as the length of a single sample. In other words, <code>t</code> is an array containing elements <code>0, sampleLength, 2*sampleLength, 3*sampleLength</code> and so on, until it reaches the last sample, making <code>(samples-1)*sampleLength</code> as the last element in <code>t</code>. We set our sample rate at 44100 Hz and duration as 1 second, so this last sample would be the 44100th.</p>
+<p>We need to do this so we can assign different values of frequencies to each sample, creating sound when we iterate through the array with the correct sample rate. For this exercise, as we have a sine wave with a set frequency, the frequency assigned to every single sample would be the frequency we assign to that sine wave, but we can imagine a situation where someone is talking, and the different intonation changes will result in different frequencies being recorded. Not to mention there are also overtones and resonance and a lot of different phenomena happening. With a sine wave, everything is very simple, as it only has one constant frequency for its entire duration.</p>
+<br>
+<figure>
+  <p align="center"> <img src="./resources/humanspectrum.jpg"> </p>
+  <figcaption>Figure 1 - The typical human voice frequency spectrum</figcaption>
+  <figcaption>(via <a href="https://www.dpamicrophones.com/mic-university/facts-about-speech-intelligibility">DPA Microphones&apos; article on speech intelligibility</a>)</figcaption>
+</figure>
+<br>
+<p>Carrying on with our code, we can now define the wave equation for our sine wave. A sinusoidal wave can be defined either using <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>i</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">sin</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">in</span></span></span></span> or <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mi>o</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">cos</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">cos</span></span></span></span>, as they are both periodic. The general displacement equation can be defined as:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mover accent="true"><mi>x</mi><mo>&#x20D7;</mo></mover><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mover accent="true"><mi>A</mi><mo>&#x20D7;</mo></mover><mtext>&#x2005;</mtext><mi>s</mi><mi>i</mi><mi>n</mi><mo stretchy="false">(</mo><mi>&#x3C9;</mi><mi>t</mi><mo>+</mo><mi>&#x3D5;</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\vec x(t) = \vec A \: sin(\omega t + \phi)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">x</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.2163em;vertical-align:-0.25em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">A</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.0966em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">in</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">&#x3C9;</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">&#x3D5;</span><span class="mclose">)</span></span></span></span></span></p>
+<p>We also have <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3C9;</mi><mo>=</mo><mn>2</mn><mi>&#x3C0;</mi><mi>f</mi></mrow><annotation encoding="application/x-tex">\omega = 2\pi f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">&#x3C9;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.03588em;">&#x3C0;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span>, which means</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mover accent="true"><mi>x</mi><mo>&#x20D7;</mo></mover><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mover accent="true"><mi>A</mi><mo>&#x20D7;</mo></mover><mtext>&#x2005;</mtext><mi>s</mi><mi>i</mi><mi>n</mi><mo stretchy="false">(</mo><mn>2</mn><mi>&#x3C0;</mi><mi>f</mi><mi>t</mi><mo>+</mo><mi>&#x3D5;</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\vec x(t) = \vec A \: sin(2\pi f t + \phi)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">x</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.2163em;vertical-align:-0.25em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">A</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.0966em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">in</span><span class="mopen">(</span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.03588em;">&#x3C0;</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">&#x3D5;</span><span class="mclose">)</span></span></span></span></span></p>
+<p>with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>x</mi><mo>&#x20D7;</mo></mover></mrow><annotation encoding="application/x-tex">\vec x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.714em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">x</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span></span></span></span> as displacement, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>A</mi><mo>&#x20D7;</mo></mover></mrow><annotation encoding="application/x-tex">\vec A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9663em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9663em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">A</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.0966em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
+3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
+10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
+-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
+-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
+H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
+c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span></span></span></span> as amplitude, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3C9;</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">&#x3C9;</span></span></span></span> as angular frequency, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span> as frequency and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span></span></span></span> as time. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3D5;</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">&#x3D5;</span></span></span></span> is phase constant but we can just set that as <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> here.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab">sinWave <span class="token operator">=</span> amplitude<span class="token operator">*</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword keyword-pi">pi</span><span class="token operator">*</span>fsin<span class="token operator">*</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Define the sine wave</span>
+</pre><p>Finally, we are ready to play the sound of this sin wave. Using <code>sound()</code> function,</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token function">sound</span><span class="token punctuation">(</span>sinWave<span class="token punctuation">,</span> sampleRate<span class="token punctuation">)</span> <span class="token comment">% Play the sound</span>
+</pre><p>We can also write the sound to a .wav file.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab">fileName <span class="token operator">=</span> <span class="token punctuation">[</span>lineTitle<span class="token punctuation">{</span><span class="token number">i</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">}</span> &quot;<span class="token punctuation">.</span>wav&quot;<span class="token punctuation">]</span> <span class="token comment">% Name sound file accordingly</span>
+<span class="token function">audiowrite</span><span class="token punctuation">(</span>fileName<span class="token punctuation">,</span> sinWave<span class="token punctuation">,</span> sampleRate<span class="token punctuation">)</span> <span class="token comment">% Create sound file</span>
+</pre><p>And now to plot the wave in the time domain. To do this, we write</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+hold on
+<span class="token function">plot</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>sinWave<span class="token punctuation">,</span> <span class="token string">&apos;color&apos;</span><span class="token punctuation">,</span> color<span class="token punctuation">{</span><span class="token number">i</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">% Plot in time domain</span>
+<span class="token function">legend</span><span class="token punctuation">(</span>lineTitle<span class="token punctuation">)</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;<span class="token function">Time</span> <span class="token punctuation">(</span>s<span class="token punctuation">)</span>&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Amplitude&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>I will explain later what <code>lineTitle</code>, <code>legend</code> and <code>color</code> do in the <a href="#problem-1-output">Output</a> section. First, we need to realize that compared to our sine wave&apos;s period, the duration of the sound is very long. This will result in Octave trying to display a plot covering the whole duration, making the wave very hard to see.</p>
+<br>
+<figure>
+  <p align="center"> <img src="./resources/withoutadjustment.png" width="500"> </p>
+  <figcaption>Figure 2 - Plot of 440 Hz wave before axis adjustment</figcaption>
+</figure>
+<br>
+<p>This is why we should adjust the x axis of the plot to only fit one period of our longest wave, which is the 440 Hz, A4 one. To do this, we use the function <code>axis([x_lo x_hi y_lo y_hi])</code>, setting <code>x_lo</code> to 0, <code>x_hi</code> to our longest period <code>1/440</code>, and values <code>-0.55</code> and <code>0.55</code> for <code>y_lo</code> and <code>y_hi</code> respectively, as we want to see the peaks of our wave. <em>See the documentation for</em> <code>axis()</code> <em><a href="https://docs.octave.org/v8.2.0/Axis-Configuration.html">here</a></em>.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token function">axis</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">440</span> <span class="token operator">-</span><span class="token number">0.55</span> <span class="token number">0.55</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">% Axis adjustments for time domain</span>
+</pre><p>After the axis adjustments,</p>
+<br>
+<figure>
+  <p align="center"> <img src="./resources/440withadjustment.png" width="500"> </p>
+  <figcaption>Figure 3: Plot of 440 Hz wave after axis adjustment </figcaption>
+</figure>
+<p>For plotting the wave in the frequency domain, we need to do Fourier Transform. We can do this using the built-in function <code>fft</code>, for Fast Fourier Transform.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab">sinFourier <span class="token operator">=</span> <span class="token function">fft</span><span class="token punctuation">(</span>sinWave<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Apply Fourier transform to our sine wave</span>
+sinFourierShift <span class="token operator">=</span> <span class="token function">fftshift</span><span class="token punctuation">(</span>sinFourier<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Shift so 0 frequencies are centered</span>
+df <span class="token operator">=</span> sampleRate <span class="token operator">/</span> samples<span class="token punctuation">;</span> <span class="token comment">% Create step for xsin array</span>
+xsin <span class="token operator">=</span> <span class="token operator">-</span>sampleRate<span class="token operator">/</span><span class="token number">2</span><span class="token operator">:</span>df<span class="token operator">:</span>sampleRate<span class="token operator">/</span><span class="token number">2</span><span class="token operator">-</span>df<span class="token punctuation">;</span> <span class="token comment">% Create domain</span>
+</pre><p>First we apply Fast Fourier Transform to our sine wave. Then we use <code>fftshift</code> so that the zero-frequencies are at the center. Next, we define the step for the array for the domain of the plot, and the array itself.</p>
+<p>Next we can plot using the defined arrays and values.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">% Apply following lines to figure(2) only</span>
+hold on
+<span class="token function">plot</span><span class="token punctuation">(</span>xsin<span class="token punctuation">,</span> <span class="token function">abs</span><span class="token punctuation">(</span>sinFourierShift<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&apos;color&apos;</span><span class="token punctuation">,</span> color<span class="token punctuation">{</span><span class="token number">i</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">% Plot in freq domain</span>
+<span class="token comment">% axis([-4000 4000 -500 13000]) % Uncomment this line to zoom at the spikes</span>
+<span class="token function">legend</span><span class="token punctuation">(</span>lineTitle<span class="token punctuation">)</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;<span class="token function">Frequency</span> <span class="token punctuation">(</span>Hz<span class="token punctuation">)</span>&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Samples&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><br>
+<figure>
+  <p align="center"> <img src="./resources/440fourier.png" width="500"> </p>
+  <figcaption>Figure 4 - Fourier plot of 440 Hz wave</figcaption>
+</figure>
+<br>
+<p>As it appears, there are two peaks on out plot, and virtually nothing else. The two peaks also mirror each other. This is because frequencies greater than half of the sample rate cannot be measured uniquely. <a href="https://youtu.be/nOLuVNhBIg0?t=21">This</a> is an animation explaining why this happens to discrete signals representing continuous signals. Anyway, as it is now, we&apos;re not very sure where the peaks are located in the graph. By zooming in though, we can confirm that the peaks are located around the 440 Hz mark, confirming the validity of our code.</p>
+<br>
+<figure>
+  <p align="center"> <img src="./resources/440fourierzoomed.png" width="500"> </p>
+  <figcaption>Figure 5 - Fourier plot of 440 Hz wave, zoomed in</figcaption>
+</figure>
+<br>
+<h3 class="mume-header" id="problem-1-output">Problem 1 Output</h3>
+
+<p>Remember that all the code we just wrote are all nested inside a <code>for</code> loop. Therefore we are creating different sounds and plots for the different frequency waves we are iterating through. Running the entirety of the code produces the time plot:</p>
+<br>
+<figure>
+  <p align="center"> <img src="./resources/timeplot.png" width="500"> </p>
+  <figcaption>Figure 6 - Waves plotted in time domain</figcaption>
+</figure>
+<br>
+<p>We can clearly see that a single cycle of the blue wave, which is the 440 Hz wave, covers the entirety of our plot domain. This is because we have set the x axis to be as long as the blue wave&apos;s period. Our red wave, which is the 880 Hz wave, has two cycles inside the plot window, as it has twice the frequency of the blue wave. This trend continues with the green and magenta wave, each of them twice as frequent as the wave before,  and has twice as many cycles inside the window as the one before.</p>
+<p>The other plot window shows the fourier plot:</p>
+<br>
+<figure>
+  <p align="center"> <img src="./resources/fourierplot.png" width="500"> </p>
+  <figcaption>Figure 7.1 - Waves plotted in frequency domain</figcaption>
+</figure>
+<br>
+<p>But this is hard to understand. If we uncomment the <code>axis()</code> function, we can zoom in on the frequencies:</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token function">axis</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">4000</span> <span class="token number">4000</span> <span class="token operator">-</span><span class="token number">500</span> <span class="token number">13000</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</pre><br>
+<figure>
+  <p align="center"> <img src="./resources/fourierplotzoomed.png" width="500"> </p>
+  <figcaption>Figure 7.2 - Waves plotted in frequency domain, zoomed in</figcaption>
+</figure>
+<br>
+<p>And now we can see that the spikes are located correctly at their respective frequencies.</p>
+<p>When making plots, we use the <code>figure()</code> function to have different plot windows. This way we can have two plot windows open at once, one with the time domain and the other with the frequency domain. We also set the <code>&apos;color&apos;</code> property to a value previously defined in the script with the array <code>color</code>, so we can have different colors according to the variable <code>i</code> in the loop. As the <code>for</code> loop iterates through <code>i</code>, the colors defined for the plot changes, and we get different colored lines for both plots. This way we can identify which lines represent which waves. As for legending, we assign a name for each wave and put them inside a cell array <code>lineTitle</code>. We then use this variable inside <code>legend()</code> to name different waves accordingly.</p>
+<p><em>The audio file can be accessed in the support folder <a href="https://drive.google.com/drive/folders/1JGxEE7_QJhW7UCtHKEyVJ_6cJ0E0k5Qq?usp=sharing">here</a>.</em></p>
+<h2 class="mume-header" id="problem-2">Problem 2</h2>
+
+<p>Next we are asked to add one of the created sine waves to the audio file and plot the resulting signal with time and frequency domains. This is easy enough, and we can reuse a lot of our code from Problem 1. First we define the sample rate and length of the audio file we want to make:</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Define the sample frequency of the sound</span>
+sampleRate <span class="token operator">=</span> <span class="token number">44100</span><span class="token punctuation">;</span> <span class="token comment">% Using standard CD quality sample frequency</span>
+sampleLength <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">/</span>sampleRate<span class="token punctuation">;</span> <span class="token comment">% Length of time the sample is held for</span>
+</pre><p>Then we load the audio file test.wav, set the total number of samples equal to its length and create the timespace for the sound:</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Import audio file</span>
+<span class="token punctuation">[</span>f<span class="token punctuation">,</span>freq<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">audioread</span><span class="token punctuation">(</span>&quot;test<span class="token punctuation">.</span>wav&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">% Total number of samples in the whole duration</span>
+samples <span class="token operator">=</span> <span class="token function">length</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Make length of noise equal to length of audio file</span>
+
+sampleSpace <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">:</span>samples<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">% Creates a space for t to draw from</span>
+t <span class="token operator">=</span> sampleLength<span class="token operator">*</span>sampleSpace<span class="token punctuation">;</span>
+</pre><p>Next we create a sine wave sound of 440 Hz:</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Creating noise</span>
+fsin <span class="token operator">=</span> <span class="token number">440</span><span class="token punctuation">;</span> <span class="token comment">% We choose 440 Hz for noise</span>
+amplitude <span class="token operator">=</span> <span class="token number">0.2</span><span class="token punctuation">;</span> <span class="token comment">% Amplitude of the wave, this time lowered so we can hear audio</span>
+
+sinWave <span class="token operator">=</span> amplitude<span class="token operator">*</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword keyword-pi">pi</span><span class="token operator">*</span>fsin<span class="token operator">*</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Define the sine wave</span>
+</pre><p>Then combine the two:</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Add noise to audiofile</span>
+noisy <span class="token operator">=</span> f <span class="token operator">+</span> sinWave<span class="token operator">&apos;</span><span class="token punctuation">;</span>
+</pre><p>To plot in the time domain, we just use the same timespace but now with frequencies in the newly defined <code>noisy</code>:</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Plot the resulting sound with time domain</span>
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> noisy<span class="token punctuation">)</span> <span class="token comment">% Plot noisy sound</span>
+<span class="token function">title</span><span class="token punctuation">(</span>&quot;Time domain plot of noisy audio file&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;<span class="token function">Time</span> <span class="token punctuation">(</span>s<span class="token punctuation">)</span>&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Amplitude&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>For Fourier transformation, we can reuse code but change it to transform <code>noisy</code> instead of <code>sinWave</code>:</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab">noisyFourier <span class="token operator">=</span> <span class="token function">fft</span><span class="token punctuation">(</span>noisy<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Apply Fourier transform to our noisy sound</span>
+noisyFourierShift <span class="token operator">=</span> <span class="token function">fftshift</span><span class="token punctuation">(</span>noisyFourier<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Shift so 0 frequencies are centered</span>
+df <span class="token operator">=</span> sampleRate <span class="token operator">/</span> samples<span class="token punctuation">;</span> <span class="token comment">% Create step for xsin array</span>
+xdomain <span class="token operator">=</span> <span class="token operator">-</span>sampleRate<span class="token operator">/</span><span class="token number">2</span><span class="token operator">:</span>df<span class="token operator">:</span>sampleRate<span class="token operator">/</span><span class="token number">2</span><span class="token operator">-</span>df<span class="token punctuation">;</span> <span class="token comment">% Create domain</span>
+</pre><p>Then for the Fourier plot:</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">% Apply following lines to figure(2) only</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>xdomain<span class="token punctuation">,</span> <span class="token function">abs</span><span class="token punctuation">(</span>noisyFourierShift<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">% Plot in freq domain</span>
+<span class="token function">title</span><span class="token punctuation">(</span>&quot;Fourier plot of noisy audio file&quot;<span class="token punctuation">)</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;<span class="token function">Frequency</span> <span class="token punctuation">(</span>Hz<span class="token punctuation">)</span>&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Samples&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>To play the sound and write a .wav file for it:</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token function">sound</span><span class="token punctuation">(</span>noisy<span class="token punctuation">,</span> sampleRate<span class="token punctuation">)</span> <span class="token comment">% Play the sound</span>
+<span class="token function">audiowrite</span><span class="token punctuation">(</span>&quot;noisy<span class="token punctuation">.</span>wav&quot;<span class="token punctuation">,</span> noisy<span class="token punctuation">,</span> sampleRate<span class="token punctuation">)</span> <span class="token comment">% Create sound file</span>
+</pre><h3 class="mume-header" id="problem-2-output">Problem 2 Output</h3>
+
+<p>The time domain plot looks like this:</p>
+<br>
+<figure>
+  <p align="center"> <img src="./resources/noisytimeplot.png" width="500"> </p>
+  <figcaption>Figure 8 - Time plot of noisy signal</figcaption>
+</figure>
+<br>
+<p>We can see that there is a noticeable bar of sound with constant amplitude across the whole duration, overlapping with the voice audio.</p>
+<p>The Fourier plot looks like this:</p>
+<br>
+<figure>
+  <p align="center"> <img src="./resources/noisyfourierplot.png" width="500"> </p>
+  <figcaption>Figure 9 - Fourier plot of noisy signal</figcaption>
+</figure>
+<br>
+<p>And in the fourier plot we see two peaks of the same frequency with many samples, as we have the sine wave playing throughout the entire file.</p>
+<p>We can observe better by plotting the different components of the signal separately but on a single plot window:</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token function">title</span><span class="token punctuation">(</span>&quot;Time domain plot of noisy audio file<span class="token punctuation">,</span> separated&quot;<span class="token punctuation">)</span>
+hold on
+<span class="token function">plot</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> sinWave<span class="token punctuation">,</span> &quot;r&quot;<span class="token punctuation">)</span> <span class="token comment">% Plot sin wave</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> f<span class="token punctuation">,</span> &quot;b&quot;<span class="token punctuation">)</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;<span class="token function">Time</span> <span class="token punctuation">(</span>s<span class="token punctuation">)</span>&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Amplitude&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>and for Fourier plot, we have to separately transform both signals then plot them:</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% For Fourier plot:</span>
+sinFourier <span class="token operator">=</span> <span class="token function">fft</span><span class="token punctuation">(</span>sinWave<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Apply Fourier transform to our sine wave</span>
+sinFourierShift <span class="token operator">=</span> <span class="token function">fftshift</span><span class="token punctuation">(</span>sinFourier<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Shift so 0 frequencies are centered</span>
+df <span class="token operator">=</span> sampleRate <span class="token operator">/</span> samples<span class="token punctuation">;</span> <span class="token comment">% Create step for xsin array</span>
+xsin <span class="token operator">=</span> <span class="token operator">-</span>sampleRate<span class="token operator">/</span><span class="token number">2</span><span class="token operator">:</span>df<span class="token operator">:</span>sampleRate<span class="token operator">/</span><span class="token number">2</span><span class="token operator">-</span>df<span class="token punctuation">;</span> <span class="token comment">% Create domain</span>
+
+F <span class="token operator">=</span> <span class="token function">fft</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Fourier transform the audio file</span>
+Fshift <span class="token operator">=</span> <span class="token function">fftshift</span><span class="token punctuation">(</span>F<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Shift so 0 frequencies are centered</span>
+df <span class="token operator">=</span> freq <span class="token operator">/</span> <span class="token function">length</span><span class="token punctuation">(</span>F<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Create step for x1 array</span>
+x1 <span class="token operator">=</span> <span class="token operator">-</span>freq<span class="token operator">/</span><span class="token number">2</span><span class="token operator">:</span>df<span class="token operator">:</span>freq<span class="token operator">/</span><span class="token number">2</span><span class="token operator">-</span>df<span class="token punctuation">;</span> <span class="token comment">% Create frequency domain</span>
+
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">% Apply following lines to figure(2) only</span>
+hold on
+<span class="token function">plot</span><span class="token punctuation">(</span>xsin<span class="token punctuation">,</span> <span class="token function">abs</span><span class="token punctuation">(</span>sinFourierShift<span class="token punctuation">)</span><span class="token punctuation">,</span>&quot;r&quot;<span class="token punctuation">)</span> <span class="token comment">% Plot sin wave</span>
+<span class="token function">title</span><span class="token punctuation">(</span>&quot;Frequency domain plot of noisy audio file<span class="token punctuation">,</span> separated&quot;<span class="token punctuation">)</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span> <span class="token function">abs</span><span class="token punctuation">(</span>Fshift<span class="token punctuation">)</span><span class="token punctuation">,</span> &quot;b&quot;<span class="token punctuation">)</span> <span class="token comment">% Plot in freq domain</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;<span class="token function">Frequency</span> <span class="token punctuation">(</span>Hz<span class="token punctuation">)</span>&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Samples&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><br>
+<figure>
+  <p align="center"> <img src="./resources/noisytimeplotseparate.png" width="500"> </p>
+  <figcaption>Figure 10 - Time plot of noisy signal, separated</figcaption>
+</figure>
+<br>
+<figure>
+  <p align="center"> <img src="./resources/noisyfourierplotseparate.png" width="500"> </p>
+  <figcaption>Figure 11 - Fourier plot of noisy signal, separated</figcaption>
+</figure>
+<br>
+<p>We can see clearly that the twin peaks are red, indicating that it is our noise signal.</p>
+<p><em>The audio file can be accessed in the support folder <a href="https://drive.google.com/drive/folders/1JGxEE7_QJhW7UCtHKEyVJ_6cJ0E0k5Qq?usp=sharing">here</a>.</em></p>
+<h2 class="mume-header" id="problem-3">Problem 3</h2>
+
+<p>To eliminate the noise from our noisy audio, we can try to eliminate the specific frequency where our noise is at. In fact, this technique is used in audio production and manipulation. In Digital Audio Workstation software like Ableton Live, Logic Pro, FL Studio, and more come with spectrum analyzers, graphic equalizers and sometimes combinations of both to let producers see the frequency spectrum of an audio file and modify the spectrum as they please. This lets them take out certain frequencies in the audio file. For example, I use Ableton Live&apos;s built-in graphic equalizer to edit audio files of drums and guitar recordings, which allow me to take out unwanted high frequencies coming from cymbals which can cause fatigue when heard for a long time, or unwanted muddy middle frequencies around 100 Hz in guitar recordings that makes the sound fuzzy and lose clarity.</p>
+<p>To apply this principle in Octave, first we carry over the code from Problem 2 to get the noisy signal. Then we specify a frequency range where we want to take out frequency components from.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Remove noise</span>
+filterOut <span class="token operator">=</span> <span class="token function">abs</span><span class="token punctuation">(</span>xdomain<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">430</span> <span class="token operator">&amp;</span> <span class="token function">abs</span><span class="token punctuation">(</span>xdomain<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">450</span><span class="token punctuation">;</span> <span class="token comment">% Select frequencies between 430 Hz and 450 Hz</span>
+keepFrequencies <span class="token operator">=</span> <span class="token operator">~</span>filterOut<span class="token punctuation">;</span>
+</pre><p>We define <code>filterOut</code> as the frequencies we want to take out, and using the NOT logical operator <code>~</code> we flip it so that the values we want to take out become 0 and the values we want to keep become 1.</p>
+<p>We also plot the logical gate to see where we will be cutting out frequency components from.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Plot the logical filtering gate</span>
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>xdomain<span class="token punctuation">,</span> keepFrequencies<span class="token punctuation">)</span>
+<span class="token function">title</span><span class="token punctuation">(</span>&quot;Fourier plot of the logical gate <span class="token keyword keyword-for">for</span> the filtering<span class="token punctuation">.</span> <span class="token number">1</span> means the frequency components are kept&quot;<span class="token punctuation">)</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;<span class="token function">Frequency</span> <span class="token punctuation">(</span>Hz<span class="token punctuation">)</span>&quot;<span class="token punctuation">)</span>
+<span class="token function">axis</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">600</span> <span class="token number">600</span> <span class="token operator">-</span><span class="token number">0.5</span> <span class="token number">1.5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</pre><p>Now comes the time to actually take out the frequency components.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Cancel noise frequencies according to defined filter</span>
+noiseCancelled <span class="token operator">=</span> <span class="token function">ifft</span><span class="token punctuation">(</span><span class="token function">ifftshift</span><span class="token punctuation">(</span>noisyFourierShift<span class="token operator">.*</span>keepFrequencies<span class="token operator">&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>By doing this, we essentially are multiplying the values in <code>noisyFourierShift</code> to the logical gate array <code>keepFrequencies</code>, which we first have to transpose because it is not a row vector. This will leave alone frequency components not targeted by the logical gate, as we multiply it by one. However, the range between 430 and 450 Hz, which we have set earlier, have values of <code>0</code> in the logical gate. This when multiplied with the corresponding frequency component, results in 0, effectively deleting it from our audio file.</p>
+<p>Then we plot the resulting noise cancelled signal in both time and frequency domains, reusing code from other plots and changing accordingly.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Plot the noise cancelled signal in time domain</span>
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> noiseCancelled<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">title</span><span class="token punctuation">(</span>&quot;Time domain plot <span class="token keyword keyword-for">for</span> noise cancelled signal&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;<span class="token function">Time</span> <span class="token punctuation">(</span>s<span class="token punctuation">)</span>&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Amplitude&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">% Plot the noise cancelled signal in frequency domain</span>
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+noiseCancelledFourier <span class="token operator">=</span> <span class="token function">fft</span><span class="token punctuation">(</span>noiseCancelled<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Apply Fourier transform to our noise cancelled sound</span>
+noiseCancelledFourierShift <span class="token operator">=</span> <span class="token function">fftshift</span><span class="token punctuation">(</span>noiseCancelledFourier<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Shift so 0 frequencies are centered</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>xdomain<span class="token punctuation">,</span> <span class="token function">abs</span><span class="token punctuation">(</span>noiseCancelledFourierShift<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">title</span><span class="token punctuation">(</span>&quot;Fourier plot of noise cancelled audio file&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;<span class="token function">Frequency</span> <span class="token punctuation">(</span>Hz<span class="token punctuation">)</span>&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Samples&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><br>
+<figure>
+  <p align="center"> <img src="./resources/noisecancelledtimeplot.png" width="500"> </p>
+  <figcaption>Figure 12 - Time plot of noise cancelled audio file</figcaption>
+</figure>
+<br>
+<figure>
+  <p align="center"> <img src="./resources/noisecancelledfourierplot.png" width="500"> </p>
+  <figcaption>Figure 13.1 - Fourier plot of noise cancelled audio file</figcaption>
+</figure>
+<br>
+<p>Zooming in around the 440 Hz part of our Fourier plot, we can see that there is a box-shaped valley in the frequency response, because we&apos;ve taken out that part of the signal.</p>
+<br>
+<figure>
+  <p align="center"> <img src="./resources/noisecancelledfourierplotzoomed.png" width="500"> </p>
+  <figcaption>Figure 13.2 - Fourier plot of noise cancelled audio file, zoomed in</figcaption>
+</figure>
+<br>
+<p>Lastly we can play the processed signal with <code>sound()</code>.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Play the noise cancelled signal</span>
+<span class="token function">sound</span><span class="token punctuation">(</span>noiseCancelled<span class="token punctuation">,</span> sampleRate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">% Save it to a .wav file</span>
+<span class="token function">audiowrite</span><span class="token punctuation">(</span>&quot;noisecancelled<span class="token punctuation">.</span>wav&quot;<span class="token punctuation">,</span> noiseCancelled<span class="token punctuation">,</span> sampleRate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p><em>The audio file can be accessed in the support folder <a href="https://drive.google.com/drive/folders/1JGxEE7_QJhW7UCtHKEyVJ_6cJ0E0k5Qq?usp=sharing">here</a>.</em></p>
+<h2 class="mume-header" id="problem-4">Problem 4</h2>
+
+<p align="center"> <img src="./resources/charliebrown.webp" width="450"> </p>
+<p>For this last problem, we will use a 29 second clip of myself playing &quot;O Tannenbaum&quot; by The Vince Guaraldi Trio on piano, because a fairly realistic application for this technique is music production. This problem uses basically all of the code from our last problem, we just change the file loaded by the script to <code>&quot;tannenbaum.wav&quot;</code>.</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token punctuation">[</span>f<span class="token punctuation">,</span>freq<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">audioread</span><span class="token punctuation">(</span>&quot;tannenbaum<span class="token punctuation">.</span>wav&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>Then plotting the sound with the time and frequency domains:</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Plot the audio file with time domain</span>
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> f<span class="token punctuation">,</span> <span class="token string">&apos;g&apos;</span><span class="token punctuation">)</span>
+<span class="token function">title</span><span class="token punctuation">(</span>&quot;Time domain plot of tannenbaum audio file&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;<span class="token function">Time</span> <span class="token punctuation">(</span>s<span class="token punctuation">)</span>&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Amplitude&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+tannenbaumFourier <span class="token operator">=</span> <span class="token function">fft</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Apply Fourier transform to our tannenbaum file</span>
+tannenbaumFourierShift <span class="token operator">=</span> <span class="token function">fftshift</span><span class="token punctuation">(</span>tannenbaumFourier<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Shift to center 0 freqs</span>
+df <span class="token operator">=</span> sampleRate <span class="token operator">/</span> samples<span class="token punctuation">;</span> <span class="token comment">% Create step for xsin array</span>
+xdomain <span class="token operator">=</span> <span class="token operator">-</span>sampleRate<span class="token operator">/</span><span class="token number">2</span><span class="token operator">:</span>df<span class="token operator">:</span>sampleRate<span class="token operator">/</span><span class="token number">2</span><span class="token operator">-</span>df<span class="token punctuation">;</span> <span class="token comment">% Create domain</span>
+
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">% Apply following lines to figure(2) only</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>xdomain<span class="token punctuation">,</span> <span class="token function">abs</span><span class="token punctuation">(</span>tannenbaumFourierShift<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&apos;g&apos;</span><span class="token punctuation">)</span> <span class="token comment">% Plot in freq domain</span>
+<span class="token function">title</span><span class="token punctuation">(</span>&quot;Fourier plot of tannenbaum audio file&quot;<span class="token punctuation">)</span>
+<span class="token function">axis</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">5000</span> <span class="token number">5000</span> <span class="token operator">-</span><span class="token number">500</span> <span class="token number">15000</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;<span class="token function">Frequency</span> <span class="token punctuation">(</span>Hz<span class="token punctuation">)</span>&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Samples&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">% Play original audio file</span>
+<span class="token function">printf</span><span class="token punctuation">(</span>&quot;Currently Playing Original Audio File<span class="token operator">\</span>n&quot;<span class="token punctuation">)</span>
+<span class="token function">sound</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> sampleRate<span class="token punctuation">)</span>
+</pre><p>Which outputs the following plots:</p>
+<br>
+<figure>
+  <p align="center"> <img src="./resources/tannenbaumtimeplot.png" width="500"> </p>
+  <figcaption>Figure 14 - Time domain plot of tannenbaum.wav (how fitting, it loooks like a Christmas tree sideways.)</figcaption>
+</figure>
+<br>
+<figure>
+  <p align="center"> <img src="./resources/tannenbaumfourierplot.png" width="500"> </p>
+  <figcaption>Figure 15 - Fourier plot of tannenbaum.wav</figcaption>
+</figure>
+<br>
+<p>Compared to test.wav, tannenbaum.wav has more discrete frequency variation. We can see this by observing the &quot;jaggedness&quot; of the Fourier plot. This is because the notes on a piano, like our sine wave, has a constant frequency. When I press the F note and hold it down, it will stay at a constant frequency until I let go of it. This is why unlike the Fourier plot of test.wav, this Fourier plot looks like a collection of very thin bars instead of semi-smooth hills and valleys. Other than that, we can also see in the time domain plot that tannenbaum.wav file has slower decay rate than test.wav. Decay is a term used in music production and audio engineering which basically means the fade out of a sound. A sound with a long decay means it fades out over a long time. A fast decay means the sound barely has any linger, or it disappears almost immediately after the main part of the sound. The human voice doesn&apos;t have much decay, and that&apos;s why we don&apos;t see many gradual hills following peaks in the time plot of test.wav. In tannenbaum.wav though, I am playing a piano with a foot pedal. I have set the electronic piano to have a slight decay when I release the keys but still have my foot on the pedal, which means every time I release my hand from the keys, there is still a bit of sound being recorded, just fading out slowly. Things like attack and decay are what we can see this with the time plot, while frequency response we can see with the Fourier plot.</p>
+<p>Now to execute the steps of problem 2:</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Creating noise</span>
+fsin <span class="token operator">=</span> <span class="token number">440</span><span class="token punctuation">;</span> <span class="token comment">% We choose 440 Hz for noise</span>
+amplitude <span class="token operator">=</span> <span class="token number">0.2</span><span class="token punctuation">;</span> <span class="token comment">% Amplitude of the wave, this time lowered so we can hear audio</span>
+
+sinWave <span class="token operator">=</span> amplitude<span class="token operator">*</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span><span class="token keyword keyword-pi">pi</span><span class="token operator">*</span>fsin<span class="token operator">*</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Define the sine wave</span>
+
+<span class="token comment">% Add noise to audiofile</span>
+noisy <span class="token operator">=</span> f <span class="token operator">+</span> sinWave<span class="token operator">&apos;</span><span class="token punctuation">;</span>
+
+<span class="token comment">% Plot the resulting sound with time domain</span>
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> noisy<span class="token punctuation">,</span> <span class="token string">&apos;g&apos;</span><span class="token punctuation">)</span> <span class="token comment">% Plot noisy sound</span>
+<span class="token function">title</span><span class="token punctuation">(</span>&quot;Time domain plot of noisy audio file&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;<span class="token function">Time</span> <span class="token punctuation">(</span>s<span class="token punctuation">)</span>&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Amplitude&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+noisyFourier <span class="token operator">=</span> <span class="token function">fft</span><span class="token punctuation">(</span>noisy<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Apply Fourier transform to our noisy sound</span>
+noisyFourierShift <span class="token operator">=</span> <span class="token function">fftshift</span><span class="token punctuation">(</span>noisyFourier<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Shift so 0 frequencies are centered</span>
+df <span class="token operator">=</span> sampleRate <span class="token operator">/</span> samples<span class="token punctuation">;</span> <span class="token comment">% Create step for xsin array</span>
+xdomain <span class="token operator">=</span> <span class="token operator">-</span>sampleRate<span class="token operator">/</span><span class="token number">2</span><span class="token operator">:</span>df<span class="token operator">:</span>sampleRate<span class="token operator">/</span><span class="token number">2</span><span class="token operator">-</span>df<span class="token punctuation">;</span> <span class="token comment">% Create domain</span>
+
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">% Apply following lines to figure(2) only</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>xdomain<span class="token punctuation">,</span> <span class="token function">abs</span><span class="token punctuation">(</span>noisyFourierShift<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&apos;g&apos;</span><span class="token punctuation">)</span> <span class="token comment">% Plot in freq domain</span>
+<span class="token function">title</span><span class="token punctuation">(</span>&quot;Fourier plot of noisy audio file&quot;<span class="token punctuation">)</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;<span class="token function">Frequency</span> <span class="token punctuation">(</span>Hz<span class="token punctuation">)</span>&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Samples&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">% Play the noisy audio file</span>
+clc
+<span class="token function">printf</span><span class="token punctuation">(</span>&quot;Currently Playing Noisy Audio File<span class="token operator">\</span>n&quot;<span class="token punctuation">)</span>
+<span class="token function">sound</span><span class="token punctuation">(</span>noisy<span class="token punctuation">,</span> sampleRate<span class="token punctuation">)</span>
+<span class="token function">audiowrite</span><span class="token punctuation">(</span>&quot;noisy<span class="token operator">-</span>tannenbaum<span class="token punctuation">.</span>wav&quot;<span class="token punctuation">,</span> noisy<span class="token punctuation">,</span> sampleRate<span class="token punctuation">)</span>
+</pre><p>As the file tannenbaum.wav is a relatively lower volume file, the noise has a significant effect on the audibility of the piano. The noise cancelling algorithm will be a perfect solution to this real problem.</p>
+<br>
+<figure>
+  <p align="center"> <img src="./resources/noisytannenbaumtimeplot.png" width="500"> </p>
+  <figcaption>Figure 16 - Time domain plot of noisytannenbaum.wav</figcaption>
+</figure>
+<br>
+<figure>
+  <p align="center"> <img src="./resources/noisytannenbaumfourierplot.png" width="500"> </p>
+  <figcaption>Figure 17 - Fourier plot of noisytannenbaum.wav</figcaption>
+</figure>
+<br>
+<p>Applying the steps of problem 3,</p>
+<pre data-role="codeBlock" data-info="matlab" class="language-matlab"><span class="token comment">% Remove noise</span>
+filterOut <span class="token operator">=</span> <span class="token function">abs</span><span class="token punctuation">(</span>xdomain<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">400</span> <span class="token operator">&amp;</span> <span class="token function">abs</span><span class="token punctuation">(</span>xdomain<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">450</span><span class="token punctuation">;</span> <span class="token comment">% Select frequencies to del</span>
+keepFrequencies <span class="token operator">=</span> <span class="token operator">~</span>filterOut<span class="token punctuation">;</span>
+
+<span class="token comment">% Plot the logical filtering gate</span>
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>xdomain<span class="token punctuation">,</span> keepFrequencies<span class="token punctuation">)</span>
+<span class="token function">title</span><span class="token punctuation">(</span>&quot;Fourier plot of the logical gate <span class="token keyword keyword-for">for</span> the filtering<span class="token punctuation">.</span> <span class="token number">1</span> means the frequency components are kept&quot;<span class="token punctuation">)</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;<span class="token function">Frequency</span> <span class="token punctuation">(</span>Hz<span class="token punctuation">)</span>&quot;<span class="token punctuation">)</span>
+<span class="token function">axis</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">600</span> <span class="token number">600</span> <span class="token operator">-</span><span class="token number">0.5</span> <span class="token number">1.5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment">% Cancel noise frequencies according to defined filter</span>
+noiseCancelled <span class="token operator">=</span> <span class="token function">ifft</span><span class="token punctuation">(</span><span class="token function">ifftshift</span><span class="token punctuation">(</span>noisyFourierShift<span class="token operator">.*</span>keepFrequencies<span class="token operator">&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">% Plot the noise cancelled signal in time domain</span>
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> noiseCancelled<span class="token punctuation">,</span> <span class="token string">&apos;c&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">title</span><span class="token punctuation">(</span>&quot;Time domain plot <span class="token keyword keyword-for">for</span> noise cancelled signal&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;<span class="token function">Time</span> <span class="token punctuation">(</span>s<span class="token punctuation">)</span>&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Amplitude&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">% Plot the noise cancelled signal in frequency domain</span>
+<span class="token function">figure</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+noiseCancelledFourier <span class="token operator">=</span> <span class="token function">fft</span><span class="token punctuation">(</span>noiseCancelled<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">% Apply Fourier transform</span>
+noiseCancelledFourierShift <span class="token operator">=</span> <span class="token function">fftshift</span><span class="token punctuation">(</span>noiseCancelledFourier<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">plot</span><span class="token punctuation">(</span>xdomain<span class="token punctuation">,</span> <span class="token function">abs</span><span class="token punctuation">(</span>noiseCancelledFourierShift<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&apos;c&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">title</span><span class="token punctuation">(</span>&quot;Fourier plot of noise cancelled audio file&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">axis</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">5000</span> <span class="token number">5000</span> <span class="token operator">-</span><span class="token number">500</span> <span class="token number">15000</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">xlabel</span><span class="token punctuation">(</span>&quot;<span class="token function">Frequency</span> <span class="token punctuation">(</span>Hz<span class="token punctuation">)</span>&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ylabel</span><span class="token punctuation">(</span>&quot;Samples&quot;<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">% Play the noise cancelled signal</span>
+clc
+<span class="token function">printf</span><span class="token punctuation">(</span>&quot;Currently Playing Noise Cancelled Audio File<span class="token operator">\</span>n&quot;<span class="token punctuation">)</span>
+<span class="token function">sound</span><span class="token punctuation">(</span>noiseCancelled<span class="token punctuation">,</span> sampleRate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">% Save it to a .wav file</span>
+<span class="token function">audiowrite</span><span class="token punctuation">(</span>&quot;tannenbaum<span class="token operator">-</span>noisecancelled<span class="token punctuation">.</span>wav&quot;<span class="token punctuation">,</span> noiseCancelled<span class="token punctuation">,</span> sampleRate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>We get the noise cancelled plots:</p>
+<br>
+<figure>
+  <p align="center"> <img src="./resources/noisecancelledtannenbaumtimeplot.png" width="500"> </p>
+  <figcaption>Figure 18 - Time domain plot of tannenbaum-noisecancelled.wav</figcaption>
+</figure>
+<br>
+<figure>
+  <p align="center"> <img src="./resources/noisecancelledtannenbaumfourierplot.png" width="500"> </p>
+  <figcaption>Figure 19 - Fourier plot of tannenbaum-noisecancelled.wav</figcaption>
+</figure>
+<br>
+<p>Even though the noise effected the signal significantly, after noise cancelling, there is virtually no difference to the original file, and this is confirmed by the time and fourier plots. This is why the Fourier Transform was a great contribution to signal processing, as it made things like noise-cancelling headphones and signal jammers possible.</p>
+<p><em>All audio files and other supporting files can be accessed in the support folder <a href="https://drive.google.com/drive/folders/1JGxEE7_QJhW7UCtHKEyVJ_6cJ0E0k5Qq?usp=sharing">here</a>.</em></p>
+<style>
+  figcaption{
+    text-align:center;
+    font-size:9pt
+  }
+  img{
+    filter: drop-shadow(0px 0px 7px );
+  }
+</style>
+      </div>
+      <div class="md-sidebar-toc">
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open>
+        <summary class="md-toc-link-wrapper">
+          <a href="#report-7" class="md-toc-link"><p>Report 7</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open>
+        <summary class="md-toc-link-wrapper">
+          <a href="#problem-1" class="md-toc-link"><p>Problem 1</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#problem-1-output" class="md-toc-link">
+            <p>Problem 1 Output</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open>
+        <summary class="md-toc-link-wrapper">
+          <a href="#problem-2" class="md-toc-link"><p>Problem 2</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#problem-2-output" class="md-toc-link">
+            <p>Problem 2 Output</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#problem-3" class="md-toc-link">
+            <p>Problem 3</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#problem-4" class="md-toc-link">
+            <p>Problem 4</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>

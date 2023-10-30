@@ -1,0 +1,9 @@
+# Created by Octave 8.1.0, Fri Apr 14 15:20:31 2023 JST <max@Maximilians-MacBook-Air.local>
+# name: A
+# type: matrix
+# rows: 2
+# columns: 3
+ 1 2 3
+ 4 5 6
+
+
