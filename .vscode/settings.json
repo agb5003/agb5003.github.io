@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "PEMFCs"
-    ]
+    ],
+    "files.associations": {
+        "stdlib.h": "c"
+    }
 }
