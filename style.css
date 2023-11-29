@@ -274,7 +274,7 @@
     }
     
     .menuContainer {
-        width: 225px;
+        width: 250px;
         height: fit-content;
         border: none;
         background-color: #eee;
@@ -303,7 +303,6 @@
         width: 300px;
         border: none;
         border-radius: 10px;
-        overflow: auto;
     }
     .vertical-menu-landing a {
         background-color: #eee;
@@ -347,7 +346,7 @@
     
     .backButtonContainer {
         margin: 15px;
-        width: 225px;
+        width: 250px;
         height: fit-content;
         border: none;
         background-color: #eee;
