@@ -1,6 +1,0 @@
-alias python=/usr/bin/python3
-alias cdcaps="cd /Users/max/Documents/GitHub/agb5003.github.io/coursework/CAPS"
-alias cdsite="cd /Users/max/Documents/GitHub/agb5003.github.io"
-
-PROMPT='%F{cyan}%n%f %F{yellow}%~%f $ '
-neofetch
