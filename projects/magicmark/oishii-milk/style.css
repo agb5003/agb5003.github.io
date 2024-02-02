@@ -1,0 +1,88 @@
+body {
+    flex: auto;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'DM Serif Display'; font-size: 18px;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+.author {
+    text-align: center;
+    font-size: 25px;
+    margin: 20px;
+    color: black;
+}
+.author:hover {
+    cursor: default;
+}
+
+.homepageTitle, .homepageTitle a {
+    text-align: center;
+    font-size: 88px;
+    margin-bottom: auto;
+    text-decoration: none;
+    font-family: 'Nunito';
+}
+.homepageTitle:hover {
+    cursor: pointer;
+}
+
+/* STYLES FOR LONG FORM TEXT (REPORTS, NOTES, ETC)*/
+
+.main{ /* Styles the main body for long text content */
+    max-width: 800px;
+}
+
+.container{
+    background-color: white;
+    align-items: center;
+}
+
+.emphasize{
+    font-style: italic;
+    font-size: 28px;
+    text-align: center;
+}
+
+p{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (min-width: 700px){
+    .schoolimg{
+        max-width: 400px;
+    }
+    .text{
+        max-width: 80%;
+    }
+}
+
+@media only screen and (max-width: 699px){
+    .schoolimg{
+        max-width: 95%;
+    }
+    .text{
+        max-width: 96%;
+    }
+}
