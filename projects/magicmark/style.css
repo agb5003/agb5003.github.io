@@ -1,0 +1,148 @@
+body {
+    flex: auto;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Playfair Display'; font-size: 18px;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+.campaign{
+    color: #bf0000;
+}
+
+.title {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "DM Serif Display";
+    text-align: lef;
+    font-size: 40px;
+    color: black;
+    max-width: 80%;
+}
+
+.homepageTitle, .homepageTitle a {
+    text-align: center;
+    font-size: 88px;
+    margin-bottom: auto;
+    text-decoration: none;
+    font-family: 'Nunito';
+}
+.homepageTitle:hover {
+    cursor: pointer;
+}
+
+/* STYLES FOR LONG FORM TEXT (REPORTS, NOTES, ETC)*/
+
+.main{ /* Styles the main body for long text content */
+    max-width: 800px;
+}
+
+.container{
+    width: 100%;
+    background-color: white;
+    align-items: center;
+    overflow: hidden;
+}
+
+.emphasize{
+    font-family: "DM Serif Display";
+    font-style: italic;
+    font-size: 28px;
+    text-align: center;
+}
+
+p{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-container{
+    display: flex
+}
+
+.team{;
+    width: 15%;
+}
+
+div{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.schoolimg{
+    filter: brightness(74%);
+}
+
+.banner{
+    max-width: 100%;
+}
+
+a{
+    color: initial;
+    text-decoration: none;
+}
+
+.button{
+    display: flex;
+    max-width: 100%;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.button:hover{
+    background-color: gainsboro;
+}
+
+.button:active{
+    background-color: gainsboro;
+}
+
+.button-elements{
+    flex: 1;
+    width: fit-content;
+}
+
+.arrow{
+    width: 20px;
+}
+
+@media only screen and (min-width: 700px){ /* LARGE SCREENS*/
+    .schoolimg{
+        max-width: 80%;
+    }
+    p{
+        max-width: 80%;
+    }
+}
+
+@media only screen and (max-width: 699px){ /* SMALL SCREENS*/
+    .schoolimg{
+        max-width: 100%;
+    }
+    .text{
+        max-width: 96%;
+    }
+}
