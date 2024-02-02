@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'DM Serif Display'; font-size: 18px;
+    font-family: 'Playfair Display'; font-size: 18px;
 }
 
 @keyframes fadeInAnimation {
@@ -16,14 +16,19 @@ body {
      }
 }
 
-.author {
-    text-align: center;
-    font-size: 25px;
-    margin: 20px;
-    color: black;
+.campaign{
+    color: #bf0000;
 }
-.author:hover {
-    cursor: default;
+
+.title {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "DM Serif Display";
+    text-align: lef;
+    font-size: 40px;
+    color: black;
+    max-width: 80%;
 }
 
 .homepageTitle, .homepageTitle a {
@@ -44,11 +49,14 @@ body {
 }
 
 .container{
+    width: 100%;
     background-color: white;
     align-items: center;
+    overflow: hidden;
 }
 
 .emphasize{
+    font-family: "DM Serif Display";
     font-style: italic;
     font-size: 28px;
     text-align: center;
@@ -69,18 +77,61 @@ img{
     margin-right: auto;
 }
 
-@media only screen and (min-width: 700px){
+div{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.schoolimg{
+    filter: brightness(74%);
+}
+
+.banner{
+    max-width: 100%;
+}
+
+a{
+    color: initial;
+    text-decoration: none;
+}
+
+.button{
+    display: flex;
+    max-width: 70%;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.button:hover{
+    background-color: gainsboro;
+}
+
+.button:active{
+    background-color: gainsboro;
+}
+
+.button-elements{
+    flex: 1;
+    width: fit-content;
+}
+
+.arrow{
+    width: 20px;
+}
+
+@media only screen and (min-width: 700px){ /* LARGE SCREENS*/
     .schoolimg{
-        max-width: 400px;
+        max-width: 80%;
     }
-    .text{
+    p{
         max-width: 80%;
     }
 }
 
-@media only screen and (max-width: 699px){
+@media only screen and (max-width: 699px){ /* SMALL SCREENS*/
     .schoolimg{
-        max-width: 95%;
+        max-width: 100%;
     }
     .text{
         max-width: 96%;
